@@ -176,7 +176,13 @@ nav {
 
     color: var(--primary);
 }
-
+.hero h1 small {
+    font-size: 0.38em;
+    font-weight: 600;
+    color: var(--gray);
+    vertical-align: middle;
+    margin-right: 8px;
+}
 .hero h2 {
 
     font-size: clamp(1.2rem, 3vw, 1.7rem);
