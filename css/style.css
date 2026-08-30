@@ -494,3 +494,38 @@ footer p:last-child {
         font-size: 1.9rem;
     }
 }
+
+/* ---------- TEXTO DINÁMICO ---------- */
+
+.texto-dinamico {
+    margin-top: 12px;
+
+    min-height: 35px;
+
+    color: var(--primary);
+
+    font-size: 1.25rem;
+
+    font-weight: 700;
+}
+
+.cursor {
+    display: inline-block;
+
+    margin-left: 3px;
+
+    animation: parpadear 0.8s infinite;
+}
+
+@keyframes parpadear {
+
+    0%,
+    50% {
+        opacity: 1;
+    }
+
+    51%,
+    100% {
+        opacity: 0;
+    }
+}
