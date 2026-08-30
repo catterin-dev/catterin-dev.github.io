@@ -1,0 +1,496 @@
+/* =====================================================
+   CATTERINE DEV - PORTAFOLIO
+   ===================================================== */
+
+/* ---------- CONFIGURACIÓN GENERAL ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f8f9fc;
+    color: #252238;
+    line-height: 1.7;
+}
+
+
+/* ---------- VARIABLES ---------- */
+
+:root {
+    --primary: #7657d9;
+    --primary-dark: #5b3fb5;
+    --secondary: #9b7bea;
+    --light-purple: #eee9ff;
+    --very-light: #f8f9fc;
+    --dark: #252238;
+    --gray: #6d6a7c;
+    --white: #ffffff;
+    --border: #e6e3ef;
+}
+
+
+/* ---------- NAVEGACIÓN ---------- */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(230, 227, 239, 0.7);
+}
+
+nav {
+    max-width: 1150px;
+    margin: auto;
+    min-height: 75px;
+    padding: 0 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    text-decoration: none;
+    font-size: 1.45rem;
+    font-weight: 800;
+    color: var(--dark);
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: var(--gray);
+    font-size: 0.92rem;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.menu a:hover {
+    color: var(--primary);
+}
+
+
+/* ---------- SECCIÓN PRINCIPAL ---------- */
+
+.hero {
+    min-height: 100vh;
+    padding: 140px 25px 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(155, 123, 234, 0.22),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 10% 80%,
+            rgba(118, 87, 217, 0.12),
+            transparent 30%
+        ),
+        var(--very-light);
+}
+
+.hero-text {
+    max-width: 900px;
+    text-align: center;
+    animation: aparecer 1s ease;
+}
+
+.saludo {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 7px 18px;
+
+    color: var(--primary);
+    background: var(--light-purple);
+
+    border-radius: 50px;
+
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.hero h1 {
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    line-height: 1.05;
+    margin-bottom: 20px;
+    color: var(--dark);
+}
+
+.hero h1 span {
+    display: block;
+    color: var(--primary);
+}
+
+.hero h2 {
+    font-size: clamp(1.2rem, 3vw, 1.7rem);
+    font-weight: 600;
+    color: var(--gray);
+    margin-bottom: 25px;
+}
+
+.descripcion {
+    max-width: 700px;
+    margin: auto;
+    color: var(--gray);
+    font-size: 1.08rem;
+}
+
+
+/* ---------- BOTONES ---------- */
+
+.botones {
+    margin-top: 35px;
+
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 13px 25px;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+    font-weight: 700;
+
+    transition: 0.3s ease;
+}
+
+.btn.principal {
+    color: var(--white);
+    background: var(--primary);
+    box-shadow: 0 8px 20px rgba(118, 87, 217, 0.25);
+}
+
+.btn.principal:hover {
+    background: var(--primary-dark);
+    transform: translateY(-3px);
+}
+
+.btn.secundario {
+    color: var(--primary);
+    background: var(--white);
+    border: 1px solid var(--border);
+}
+
+.btn.secundario:hover {
+    border-color: var(--primary);
+    transform: translateY(-3px);
+}
+
+
+/* ---------- SECCIONES ---------- */
+
+section:not(.hero) {
+    max-width: 1050px;
+    margin: auto;
+    padding: 100px 25px;
+}
+
+section:not(.hero) > h2 {
+    position: relative;
+
+    margin-bottom: 45px;
+
+    font-size: 2.2rem;
+    color: var(--dark);
+}
+
+section:not(.hero) > h2::after {
+    content: "";
+
+    display: block;
+
+    width: 55px;
+    height: 4px;
+
+    margin-top: 10px;
+
+    background: var(--primary);
+    border-radius: 10px;
+}
+
+
+/* ---------- SOBRE MÍ ---------- */
+
+#sobre-mi {
+    background: var(--white);
+}
+
+#sobre-mi p {
+    max-width: 850px;
+    margin-bottom: 20px;
+
+    color: var(--gray);
+    font-size: 1.05rem;
+}
+
+
+/* ---------- EXPERIENCIA ---------- */
+
+article {
+    background: var(--white);
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    padding: 30px;
+
+    margin-bottom: 25px;
+
+    box-shadow: 0 10px 35px rgba(50, 40, 80, 0.05);
+
+    transition: 0.3s ease;
+}
+
+article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 40px rgba(50, 40, 80, 0.09);
+}
+
+article h3 {
+    margin-bottom: 8px;
+
+    color: var(--dark);
+    font-size: 1.25rem;
+}
+
+article h4 {
+    margin-bottom: 18px;
+
+    color: var(--primary);
+}
+
+article p {
+    color: var(--gray);
+}
+
+article ul {
+    padding-left: 22px;
+    color: var(--gray);
+}
+
+article li {
+    margin-bottom: 7px;
+}
+
+
+/* ---------- TECNOLOGÍAS ---------- */
+
+#tecnologias {
+    background: var(--very-light);
+}
+
+.tecnologias {
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+
+    gap: 18px;
+}
+
+.tecnologias div {
+    padding: 25px 15px;
+
+    text-align: center;
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: 15px;
+
+    font-weight: 700;
+
+    transition: 0.3s ease;
+}
+
+.tecnologias div:hover {
+    color: var(--primary);
+    transform: translateY(-5px);
+    border-color: var(--secondary);
+}
+
+
+/* ---------- PROYECTOS ---------- */
+
+#proyectos {
+    background: var(--white);
+}
+
+#proyectos article {
+    position: relative;
+    overflow: hidden;
+}
+
+#proyectos article::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 5px;
+    height: 100%;
+
+    background: var(--primary);
+}
+
+
+/* ---------- INVESTIGACIÓN ---------- */
+
+#investigacion {
+    background: var(--very-light);
+}
+
+#investigacion article h3 {
+    color: var(--primary);
+    line-height: 1.5;
+}
+
+#investigacion article p {
+    margin-top: 15px;
+}
+
+
+/* ---------- CONTACTO ---------- */
+
+#contacto {
+    text-align: center;
+    background: var(--white);
+}
+
+#contacto > h2::after {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#contacto p {
+    margin: 12px 0;
+    color: var(--gray);
+}
+
+
+/* ---------- FOOTER ---------- */
+
+footer {
+    padding: 35px 20px;
+
+    text-align: center;
+
+    color: #ffffff;
+    background: var(--dark);
+}
+
+footer p {
+    margin: 5px;
+}
+
+footer p:last-child {
+    color: #bcb7cf;
+}
+
+
+/* ---------- ANIMACIONES ---------- */
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 850px) {
+
+    .menu {
+        gap: 12px;
+    }
+
+    .menu a {
+        font-size: 0.8rem;
+    }
+
+    .hero h1 {
+        font-size: 3.2rem;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    header {
+        position: relative;
+    }
+
+    nav {
+        padding: 18px 20px;
+
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .menu {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        min-height: 90vh;
+        padding-top: 70px;
+    }
+
+    .hero h1 {
+        font-size: 2.7rem;
+    }
+
+    .hero h2 {
+        font-size: 1.15rem;
+    }
+
+    section:not(.hero) {
+        padding: 70px 20px;
+    }
+
+    section:not(.hero) > h2 {
+        font-size: 1.9rem;
+    }
+}
