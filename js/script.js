@@ -1,61 +1,49 @@
-// ==========================================
-// CATTERIN-DEV
-// JavaScript principal
-// ==========================================
+const textos = [
+    "Python 🐍",
+    "Análisis de datos 📊",
+    "Automatización ⚙️",
+    "Estadística 📈"
+];
 
-document.addEventListener("DOMContentLoaded", () => {
+const elemento = document.getElementById("texto-dinamico");
 
-    const texto = document.getElementById("texto-dinamico");
+let indiceTexto = 0;
+let indiceCaracter = 0;
+let borrando = false;
 
-    const profesiones = [
-        "Análisis de Datos 📊",
-        "Python 🐍",
-        "Automatización ⚙️",
-        "Visualización de Datos 📈",
-        "Investigación Aplicada 🔬"
-    ];
+function escribirTexto() {
 
-    let indice = 0;
-    let posicion = 0;
-    let borrando = false;
+    const textoActual = textos[indiceTexto];
 
-    function escribir() {
+    if (!borrando) {
 
-        const palabra = profesiones[indice];
+        elemento.textContent =
+            textoActual.substring(0, indiceCaracter + 1);
 
-        if (!borrando) {
+        indiceCaracter++;
 
-            texto.textContent = palabra.substring(0, posicion + 1);
-            posicion++;
-
-            if (posicion === palabra.length) {
-
-                borrando = true;
-
-                setTimeout(escribir, 1800);
-                return;
-            }
-
-        } else {
-
-            texto.textContent = palabra.substring(0, posicion - 1);
-            posicion--;
-
-            if (posicion === 0) {
-
-                borrando = false;
-
-                indice++;
-
-                if (indice >= profesiones.length) {
-                    indice = 0;
-                }
-            }
+        if (indiceCaracter === textoActual.length) {
+            borrando = true;
+            setTimeout(escribirTexto, 1800);
+            return;
         }
 
-        setTimeout(escribir, borrando ? 45 : 80);
+    } else {
+
+        elemento.textContent =
+            textoActual.substring(0, indiceCaracter - 1);
+
+        indiceCaracter--;
+
+        if (indiceCaracter === 0) {
+            borrando = false;
+            indiceTexto = (indiceTexto + 1) % textos.length;
+        }
+
     }
 
-    escribir();
+    setTimeout(escribirTexto, borrando ? 50 : 100);
 
-});
+}
+
+escribirTexto();
