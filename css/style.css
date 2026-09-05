@@ -141,22 +141,16 @@ nav {
     max-width: 700px;
     animation: aparecer 1s ease;
 }
+/* ---------- NOMBRE PRINCIPAL ---------- */
 
 .hero h1 {
     font-size: clamp(2.3rem, 4vw, 3.8rem);
     line-height: 1.1;
     margin-bottom: 20px;
+
     color: var(--dark);
+    font-weight: 800;
 }
-
-.hero h1 small {
-    font-size: 0.38em;
-    font-weight: 600;
-    color: var(--gray);
-    vertical-align: middle;
-    margin-right: 8px;
-}
-
 .hero h1 span {
     display: inline;
 }
