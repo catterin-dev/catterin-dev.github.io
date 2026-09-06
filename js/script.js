@@ -1,79 +1,55 @@
-/* =====================================================
-   CATTERINE DEV - JAVASCRIPT
-   ===================================================== */
-
-
-/* =====================================================
-   TEXTO DINAMICO
-   ===================================================== */
-
-const textoDinamico = document.getElementById("texto-dinamico");
-
 const textos = [
-    "Análisis de datos",
-    "Programación en Python",
-    "Automatización de procesos",
-    "Visualización estadística",
-    "Ciencia de datos"
+    "Python 🐍",
+    "Análisis de datos 📊",
+    "Automatización ⚙️",
+    "Estadística 📈"
 ];
 
+const elemento = document.getElementById("texto-dinamico");
+
 let indiceTexto = 0;
-let indiceLetra = 0;
+let indiceCaracter = 0;
 let borrando = false;
 
 function escribirTexto() {
-
-    if (!textoDinamico) return;
 
     const textoActual = textos[indiceTexto];
 
     if (!borrando) {
 
-        textoDinamico.textContent =
-            textoActual.substring(0, indiceLetra + 1);
+        elemento.textContent =
+            textoActual.substring(0, indiceCaracter + 1);
 
-        indiceLetra++;
+        indiceCaracter++;
 
-        if (indiceLetra === textoActual.length) {
-
+        if (indiceCaracter === textoActual.length) {
             borrando = true;
-
             setTimeout(escribirTexto, 1800);
-
             return;
         }
 
     } else {
 
-        textoDinamico.textContent =
-            textoActual.substring(0, indiceLetra - 1);
+        elemento.textContent =
+            textoActual.substring(0, indiceCaracter - 1);
 
-        indiceLetra--;
+        indiceCaracter--;
 
-        if (indiceLetra === 0) {
-
+        if (indiceCaracter === 0) {
             borrando = false;
-
-            indiceTexto++;
-
-            if (indiceTexto === textos.length) {
-                indiceTexto = 0;
-            }
-
+            indiceTexto = (indiceTexto + 1) % textos.length;
         }
 
     }
 
-    setTimeout(escribirTexto, borrando ? 45 : 90);
+    setTimeout(escribirTexto, borrando ? 50 : 100);
 
 }
 
 escribirTexto();
 
-
-
 /* =====================================================
-   PARTICULAS MORADAS
+   PARTICULAS MORADAS ANIMADAS
    ===================================================== */
 
 const canvas = document.getElementById("particle-canvas");
@@ -86,18 +62,9 @@ let mouse = {
     y: null
 };
 
-
-/* =====================================================
-   TAMAÑO DEL CANVAS
-   ===================================================== */
-
 function resizeCanvas() {
-
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-
-    createParticles();
-
 }
 
 resizeCanvas();
@@ -105,19 +72,16 @@ resizeCanvas();
 window.addEventListener("resize", resizeCanvas);
 
 
+/* ---------- CURSOR ---------- */
 
-/* =====================================================
-   CURSOR
-   ===================================================== */
-
-window.addEventListener("mousemove", function(event) {
+window.addEventListener("mousemove", function (event) {
 
     mouse.x = event.clientX;
     mouse.y = event.clientY;
 
 });
 
-window.addEventListener("mouseleave", function() {
+window.addEventListener("mouseleave", function () {
 
     mouse.x = null;
     mouse.y = null;
@@ -125,10 +89,7 @@ window.addEventListener("mouseleave", function() {
 });
 
 
-
-/* =====================================================
-   PARTICULA
-   ===================================================== */
+/* ---------- PARTICULA ---------- */
 
 class Particle {
 
@@ -144,6 +105,7 @@ class Particle {
 
     }
 
+
     update() {
 
         this.x += this.speedX;
@@ -157,31 +119,45 @@ class Particle {
             const dx = this.x - mouse.x;
             const dy = this.y - mouse.y;
 
-            const distance = Math.sqrt(dx * dx + dy * dy);
+            const distance = Math.sqrt(
+                dx * dx + dy * dy
+            );
 
-            const radius = 150;
+            const radius = 120;
 
             if (distance < radius && distance > 0) {
 
-                const fuerza = (radius - distance) / radius;
+                const fuerza =
+                    (radius - distance) / radius;
 
-                this.x += (dx / distance) * fuerza * 2.5;
-                this.y += (dy / distance) * fuerza * 2.5;
+                this.x += (dx / distance) * fuerza * 2;
+                this.y += (dy / distance) * fuerza * 2;
 
             }
 
         }
 
 
-        /* REAPARECER POR EL OTRO LADO */
+        /* APARECER POR EL OTRO LADO */
 
-        if (this.x < 0) this.x = canvas.width;
-        if (this.x > canvas.width) this.x = 0;
+        if (this.x < 0) {
+            this.x = canvas.width;
+        }
 
-        if (this.y < 0) this.y = canvas.height;
-        if (this.y > canvas.height) this.y = 0;
+        if (this.x > canvas.width) {
+            this.x = 0;
+        }
+
+        if (this.y < 0) {
+            this.y = canvas.height;
+        }
+
+        if (this.y > canvas.height) {
+            this.y = 0;
+        }
 
     }
+
 
     draw() {
 
@@ -195,10 +171,9 @@ class Particle {
             Math.PI * 2
         );
 
-        ctx.fillStyle = "rgba(118, 87, 217, 0.65)";
+        ctx.fillStyle = "rgba(118, 87, 217, 0.55)";
 
         ctx.shadowBlur = 8;
-
         ctx.shadowColor = "rgba(118, 87, 217, 0.5)";
 
         ctx.fill();
@@ -208,45 +183,60 @@ class Particle {
 }
 
 
-
-/* =====================================================
-   CREAR PARTICULAS
-   ===================================================== */
+/* ---------- CREAR PARTICULAS ---------- */
 
 function createParticles() {
 
     particles = [];
 
-    const cantidad = window.innerWidth < 600 ? 35 : 100;
+    let cantidad;
+
+    if (window.innerWidth < 600) {
+        cantidad = 35;
+    } else {
+        cantidad = 80;
+    }
 
     for (let i = 0; i < cantidad; i++) {
 
-        particles.push(new Particle());
+        particles.push(
+            new Particle()
+        );
 
     }
 
 }
 
+createParticles();
 
 
-/* =====================================================
-   CONECTAR PARTICULAS
-   ===================================================== */
+/* ---------- CONECTAR PARTICULAS ---------- */
 
 function connectParticles() {
 
     for (let a = 0; a < particles.length; a++) {
 
-        for (let b = a + 1; b < particles.length; b++) {
+        for (
+            let b = a + 1;
+            b < particles.length;
+            b++
+        ) {
 
-            const dx = particles[a].x - particles[b].x;
-            const dy = particles[a].y - particles[b].y;
+            const dx =
+                particles[a].x -
+                particles[b].x;
 
-            const distance = Math.sqrt(dx * dx + dy * dy);
+            const dy =
+                particles[a].y -
+                particles[b].y;
+
+            const distance =
+                Math.sqrt(dx * dx + dy * dy);
 
             if (distance < 100) {
 
-                const opacity = 1 - distance / 100;
+                const opacity =
+                    1 - distance / 100;
 
                 ctx.strokeStyle =
                     `rgba(118, 87, 217, ${opacity * 0.12})`;
@@ -276,10 +266,7 @@ function connectParticles() {
 }
 
 
-
-/* =====================================================
-   ANIMACION
-   ===================================================== */
+/* ---------- ANIMACION ---------- */
 
 function animateParticles() {
 
@@ -290,17 +277,29 @@ function animateParticles() {
         canvas.height
     );
 
-    particles.forEach(function(particle) {
 
-        particle.update();
-        particle.draw();
+    particles.forEach(
+        particle => {
 
-    });
+            particle.update();
+            particle.draw();
+
+        }
+    );
+
 
     connectParticles();
 
-    requestAnimationFrame(animateParticles);
+
+    requestAnimationFrame(
+        animateParticles
+    );
 
 }
 
 animateParticles();
+
+
+
+
+
