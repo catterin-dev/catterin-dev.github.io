@@ -300,5 +300,62 @@ function animateParticles() {
 
 animateParticles();
 
+/* =====================================================
+   DESTELLO DEL CURSOR
+===================================================== */
 
+let ultimaPosicionX = 0;
+let ultimaPosicionY = 0;
+let temporizadorCursor;
+
+function crearDestello(x, y) {
+    const destello = document.createElement("span");
+
+    destello.className = "cursor-spark";
+    destello.style.left = `${x}px`;
+    destello.style.top = `${y}px`;
+
+    document.body.appendChild(destello);
+
+    setTimeout(() => {
+        destello.remove();
+    }, 700);
+}
+
+function crearBrillo(x, y) {
+    const brillo = document.createElement("span");
+
+    brillo.className = "cursor-glow";
+    brillo.style.left = `${x}px`;
+    brillo.style.top = `${y}px`;
+
+    document.body.appendChild(brillo);
+
+    setTimeout(() => {
+        brillo.remove();
+    }, 1000);
+}
+
+window.addEventListener("mousemove", function (event) {
+    const diferenciaX = Math.abs(event.clientX - ultimaPosicionX);
+    const diferenciaY = Math.abs(event.clientY - ultimaPosicionY);
+
+    if (diferenciaX > 12 || diferenciaY > 12) {
+        crearDestello(event.clientX, event.clientY);
+
+        ultimaPosicionX = event.clientX;
+        ultimaPosicionY = event.clientY;
+    }
+
+    clearTimeout(temporizadorCursor);
+
+    temporizadorCursor = setTimeout(() => {
+        crearBrillo(event.clientX, event.clientY);
+    }, 350);
+});
+
+window.addEventListener("click", function (event) {
+    crearDestello(event.clientX, event.clientY);
+    crearDestello(event.clientX, event.clientY);
+});
 
