@@ -1,41 +1,30 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Br. Catterine Carely Quispe Quispe</title>
 
-    <meta name="description"
-        content="Portafolio profesional de Catterine Carely Quispe Quispe - Ingeniería Estadística e Informática, análisis de datos, Python y automatización.">
+    <meta name="description" content="Portafolio profesional de Catterine Carely Quispe Quispe">
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
 
-    <!-- =====================================================
-         FONDO ANIMADO
-         ===================================================== -->
-
+    <!-- FONDO ANIMADO -->
     <canvas id="particle-canvas"></canvas>
 
-
-    <!-- =====================================================
-         NAVEGACIÓN
-         ===================================================== -->
-
+    <!-- NAVEGACIÓN -->
     <header>
-
-        <nav>
+        <nav class="navbar">
 
             <a href="#inicio" class="logo">
                 catterin<span>-dev</span>
             </a>
 
             <div class="menu">
-
                 <a href="#inicio">Inicio</a>
                 <a href="#sobre-mi">Sobre mí</a>
                 <a href="#formacion">Formación</a>
@@ -44,61 +33,41 @@
                 <a href="#proyectos">Proyectos</a>
                 <a href="#investigacion">Investigación</a>
                 <a href="#contacto">Contacto</a>
-
             </div>
 
         </nav>
-
     </header>
-
-
 
     <main>
 
-
-        <!-- =====================================================
-             INICIO
-             ===================================================== -->
-
+        <!-- INICIO -->
         <section id="inicio" class="hero">
 
             <div class="hero-container">
 
-
                 <div class="hero-text">
 
-                    <!-- NOMBRE COMPLETO: MISMO TAMAÑO -->
-
+                    <!-- NOMBRE COMPLETO DEL MISMO TAMAÑO -->
                     <h1 class="nombre-principal">
                         Br. Catterine Carely Quispe Quispe
                     </h1>
-
 
                     <h2>
                         Ingeniería Estadística e Informática
                     </h2>
 
-
                     <p class="texto-dinamico">
-
                         <span id="texto-dinamico"></span>
-
                         <span class="cursor">|</span>
-
                     </p>
 
-
                     <p class="descripcion">
-
                         Transformando datos en información y procesos
                         en soluciones tecnológicas mediante estadística,
                         programación y automatización.
-
                     </p>
 
-
                     <div class="botones">
-
                         <a href="#proyectos" class="btn principal">
                             Ver proyectos
                         </a>
@@ -106,64 +75,40 @@
                         <a href="#contacto" class="btn secundario">
                             Contactarme
                         </a>
-
                     </div>
 
                 </div>
-
-
-
-                <!-- IMAGEN -->
 
                 <div class="hero-image">
 
                     <div class="image-circle">
 
-                        <div class="image-placeholder">
-                            👩‍💻
-                        </div>
+                        <!-- TU FOTO -->
+                        <img src="./assets/foto.jpg" alt="Catterine Carely Quispe">
 
                     </div>
 
                 </div>
-
 
             </div>
 
         </section>
 
 
-
-        <!-- =====================================================
-             SOBRE MÍ
-             ===================================================== -->
-
-        <section id="sobre-mi" class="about-section">
+        <!-- SOBRE MÍ -->
+        <section id="sobre-mi" class="section">
 
             <div class="section-header">
-
-                <p class="section-tag">
-                    PERFIL PROFESIONAL
-                </p>
-
+                <p class="section-tag">PERFIL PROFESIONAL</p>
                 <h2>Sobre mí</h2>
-
-                <p>
-                    Una combinación entre estadística, tecnología
-                    y análisis de datos.
-                </p>
-
+                <p>Una combinación entre estadística, tecnología y análisis de datos.</p>
             </div>
-
 
             <div class="about-grid">
 
-
                 <div class="about-content">
 
-                    <h3>
-                        Estadística + Tecnología + Datos
-                    </h3>
+                    <h3>Estadística + Tecnología + Datos</h3>
 
                     <p>
                         Soy Bachiller en Ingeniería Estadística e Informática,
@@ -187,66 +132,31 @@
 
                 </div>
 
-
-
                 <div class="about-cards">
 
-
                     <div class="about-card">
-
-                        <span class="about-icon">📊</span>
-
+                        <span>📊</span>
                         <h4>Análisis de Datos</h4>
-
-                        <p>
-                            Transformación e interpretación
-                            de información.
-                        </p>
-
+                        <p>Transformación e interpretación de información.</p>
                     </div>
 
-
                     <div class="about-card">
-
-                        <span class="about-icon">🐍</span>
-
+                        <span>🐍</span>
                         <h4>Python</h4>
-
-                        <p>
-                            Programación y automatización
-                            de procesos.
-                        </p>
-
+                        <p>Programación y automatización de procesos.</p>
                     </div>
 
-
                     <div class="about-card">
-
-                        <span class="about-icon">🤖</span>
-
+                        <span>🤖</span>
                         <h4>Automatización</h4>
-
-                        <p>
-                            Optimización de tareas
-                            repetitivas.
-                        </p>
-
+                        <p>Optimización de tareas repetitivas.</p>
                     </div>
-
 
                     <div class="about-card">
-
-                        <span class="about-icon">🔬</span>
-
+                        <span>🔬</span>
                         <h4>Investigación</h4>
-
-                        <p>
-                            Aplicación de tecnología
-                            a problemas estadísticos.
-                        </p>
-
+                        <p>Aplicación de tecnología a problemas estadísticos.</p>
                     </div>
-
 
                 </div>
 
@@ -255,60 +165,36 @@
         </section>
 
 
-
-        <!-- =====================================================
-             FORMACIÓN
-             ===================================================== -->
-
-        <section id="formacion" class="education-section">
+        <!-- FORMACIÓN -->
+        <section id="formacion" class="section">
 
             <div class="section-header">
-
-                <p class="section-tag">
-                    FORMACIÓN ACADÉMICA
-                </p>
-
+                <p class="section-tag">FORMACIÓN ACADÉMICA</p>
                 <h2>Educación</h2>
-
-                <p>
-                    Formación orientada a la estadística,
-                    informática y análisis de datos.
-                </p>
-
+                <p>Formación orientada a la estadística, informática y análisis de datos.</p>
             </div>
-
 
             <div class="timeline">
 
                 <div class="timeline-item">
 
-                    <div class="timeline-dot">
-                        🎓
-                    </div>
-
+                    <div class="timeline-dot">🎓</div>
 
                     <div class="timeline-content">
 
-                        <span class="timeline-year">
-                            Universidad Nacional del Altiplano
-                        </span>
+                        <span>Universidad Nacional del Altiplano</span>
 
-                        <h3>
-                            Ingeniería Estadística e Informática
-                        </h3>
+                        <h3>Ingeniería Estadística e Informática</h3>
 
                         <p>
                             Bachiller en Ingeniería Estadística e Informática.
                         </p>
 
-
-                        <div class="education-tags">
-
+                        <div class="tags">
                             <span>Estadística</span>
                             <span>Programación</span>
                             <span>Análisis de datos</span>
                             <span>Sistemas de información</span>
-
                         </div>
 
                     </div>
@@ -320,183 +206,68 @@
         </section>
 
 
-
-        <!-- =====================================================
-             EXPERIENCIA
-             ===================================================== -->
-
-        <section id="experiencia" class="experience-section">
+        <!-- EXPERIENCIA -->
+        <section id="experiencia" class="section">
 
             <div class="section-header">
-
-                <p class="section-tag">
-                    EXPERIENCIA PROFESIONAL
-                </p>
-
+                <p class="section-tag">EXPERIENCIA PROFESIONAL</p>
                 <h2>Mi experiencia</h2>
-
-                <p>
-                    Experiencia aplicada al procesamiento, análisis
-                    y difusión de información estadística.
-                </p>
-
+                <p>Experiencia aplicada al procesamiento, análisis y difusión de información estadística.</p>
             </div>
 
+            <div class="experience-card">
 
-            <div class="experience-timeline">
+                <span class="experience-date">2024</span>
 
-                <div class="experience-item">
+                <h3>
+                    Instituto Nacional de Estadística e Informática – INEI
+                </h3>
 
-                    <div class="experience-marker">
-                        💼
+                <h4>
+                    ODEI Puno · Área de Difusión Estadística
+                </h4>
+
+                <p>
+                    Experiencia relacionada con el procesamiento, organización
+                    y difusión de información estadística, utilizando
+                    herramientas informáticas para mejorar la elaboración
+                    y presentación de información.
+                </p>
+
+                <div class="experience-grid">
+
+                    <div>
+                        <span>📊</span>
+                        <strong>Información estadística</strong>
+                        <p>Procesamiento y organización de información.</p>
                     </div>
 
-
-                    <div class="experience-card">
-
-
-                        <div class="experience-top">
-
-                            <div>
-
-                                <span class="experience-date">
-                                    2024
-                                </span>
-
-                                <h3>
-                                    Instituto Nacional de Estadística
-                                    e Informática – INEI
-                                </h3>
-
-                                <h4>
-                                    ODEI Puno · Área de Difusión Estadística
-                                </h4>
-
-                            </div>
-
-
-                            <span class="experience-type">
-                                Experiencia profesional
-                            </span>
-
-                        </div>
-
-
-
-                        <p class="experience-description">
-
-                            Experiencia relacionada con el procesamiento,
-                            organización y difusión de información estadística,
-                            utilizando herramientas informáticas para mejorar
-                            la elaboración y presentación de información.
-
-                        </p>
-
-
-
-                        <div class="experience-grid">
-
-
-                            <div class="experience-feature">
-
-                                <span>📊</span>
-
-                                <div>
-
-                                    <strong>
-                                        Información estadística
-                                    </strong>
-
-                                    <p>
-                                        Procesamiento y organización
-                                        de información.
-                                    </p>
-
-                                </div>
-
-                            </div>
-
-
-
-                            <div class="experience-feature">
-
-                                <span>📑</span>
-
-                                <div>
-
-                                    <strong>
-                                        Reportes
-                                    </strong>
-
-                                    <p>
-                                        Elaboración de reportes y
-                                        materiales de difusión.
-                                    </p>
-
-                                </div>
-
-                            </div>
-
-
-
-                            <div class="experience-feature">
-
-                                <span>💻</span>
-
-                                <div>
-
-                                    <strong>
-                                        Herramientas tecnológicas
-                                    </strong>
-
-                                    <p>
-                                        Uso de herramientas para
-                                        procesamiento de datos.
-                                    </p>
-
-                                </div>
-
-                            </div>
-
-
-
-                            <div class="experience-feature">
-
-                                <span>⚙️</span>
-
-                                <div>
-
-                                    <strong>
-                                        Optimización
-                                    </strong>
-
-                                    <p>
-                                        Automatización y mejora
-                                        de tareas repetitivas.
-                                    </p>
-
-                                </div>
-
-                            </div>
-
-
-                        </div>
-
-
-
-                        <div class="experience-tags">
-
-                            <span>Estadística</span>
-                            <span>Procesamiento de datos</span>
-                            <span>Reportes</span>
-                            <span>Difusión estadística</span>
-                            <span>Automatización</span>
-
-                        </div>
-
-
+                    <div>
+                        <span>📑</span>
+                        <strong>Reportes</strong>
+                        <p>Elaboración de reportes y materiales de difusión.</p>
                     </div>
 
+                    <div>
+                        <span>💻</span>
+                        <strong>Herramientas tecnológicas</strong>
+                        <p>Uso de herramientas para procesamiento de datos.</p>
+                    </div>
+
+                    <div>
+                        <span>⚙️</span>
+                        <strong>Optimización</strong>
+                        <p>Automatización y mejora de tareas repetitivas.</p>
+                    </div>
+
+                </div>
+
+                <div class="tags">
+                    <span>Estadística</span>
+                    <span>Procesamiento de datos</span>
+                    <span>Reportes</span>
+                    <span>Difusión estadística</span>
+                    <span>Automatización</span>
                 </div>
 
             </div>
@@ -504,30 +275,16 @@
         </section>
 
 
-
-        <!-- =====================================================
-             TECNOLOGÍAS
-             ===================================================== -->
-
-        <section id="tecnologias" class="technologies-section">
+        <!-- TECNOLOGÍAS -->
+        <section id="tecnologias" class="section">
 
             <div class="section-header">
-
-                <p class="section-tag">
-                    HERRAMIENTAS
-                </p>
-
+                <p class="section-tag">HERRAMIENTAS</p>
                 <h2>Tecnologías y herramientas</h2>
-
-                <p>
-                    Tecnologías utilizadas para el análisis,
-                    procesamiento y visualización de datos.
-                </p>
-
+                <p>Tecnologías utilizadas para el análisis, procesamiento y visualización de datos.</p>
             </div>
 
-
-            <div class="tecnologias">
+            <div class="technologies">
 
                 <div>🐍 Python</div>
                 <div>📊 Pandas</div>
@@ -542,95 +299,60 @@
         </section>
 
 
-
-        <!-- =====================================================
-             PROYECTOS
-             ===================================================== -->
-
-        <section id="proyectos" class="projects-section">
+        <!-- PROYECTOS -->
+        <section id="proyectos" class="section">
 
             <div class="section-header">
-
-                <p class="section-tag">
-                    TRABAJOS DESTACADOS
-                </p>
-
+                <p class="section-tag">TRABAJOS DESTACADOS</p>
                 <h2>Proyectos</h2>
-
-                <p>
-                    Soluciones orientadas al análisis de datos
-                    y la automatización de procesos.
-                </p>
-
+                <p>Soluciones orientadas al análisis de datos y la automatización de procesos.</p>
             </div>
 
+            <div class="project-grid">
 
-            <article>
+                <article class="project-card">
 
-                <h3>
-                    🐍 Automatización de reportes estadísticos
-                </h3>
+                    <h3>🐍 Automatización de reportes estadísticos</h3>
 
-                <p>
-                    Proyecto orientado a automatizar tareas repetitivas
-                    relacionadas con la generación de reportes mediante
-                    Python.
-                </p>
+                    <p>
+                        Proyecto orientado a automatizar tareas repetitivas
+                        relacionadas con la generación de reportes mediante Python.
+                    </p>
 
-                <p>
                     <strong>Tecnologías:</strong>
-                    Python · Pandas · OpenPyXL
-                </p>
+                    <p>Python · Pandas · OpenPyXL</p>
 
-            </article>
+                </article>
 
+                <article class="project-card">
 
+                    <h3>📊 Análisis y visualización de datos</h3>
 
-            <article>
+                    <p>
+                        Desarrollo de análisis estadísticos y visualizaciones
+                        para facilitar la interpretación de información.
+                    </p>
 
-                <h3>
-                    📊 Análisis y visualización de datos
-                </h3>
-
-                <p>
-                    Desarrollo de análisis estadísticos y visualizaciones
-                    para facilitar la interpretación de información.
-                </p>
-
-                <p>
                     <strong>Tecnologías:</strong>
-                    Python · Pandas · Matplotlib · R · Power BI
-                </p>
+                    <p>Python · Pandas · Matplotlib · R · Power BI</p>
 
-            </article>
+                </article>
+
+            </div>
 
         </section>
 
 
-
-        <!-- =====================================================
-             INVESTIGACIÓN
-             ===================================================== -->
-
-        <section id="investigacion" class="research-section">
+        <!-- INVESTIGACIÓN -->
+        <section id="investigacion" class="section">
 
             <div class="section-header">
-
-                <p class="section-tag">
-                    INVESTIGACIÓN
-                </p>
-
+                <p class="section-tag">INVESTIGACIÓN</p>
                 <h2>Investigación</h2>
-
-                <p>
-                    Aplicación de métodos estadísticos y tecnológicos
-                    para resolver problemas reales.
-                </p>
-
+                <p>Aplicación de métodos estadísticos y tecnológicos para resolver problemas reales.</p>
             </div>
 
-
-            <article>
+            <article class="research-card">
 
                 <h3>
                     Validación experimental de una estrategia de
@@ -646,8 +368,7 @@
 
                 <p>
                     <strong>Sub-línea:</strong>
-                    Automatización de procesos y sistemas de
-                    información estadística.
+                    Automatización de procesos y sistemas de información estadística.
                 </p>
 
                 <p>
@@ -662,67 +383,695 @@
         </section>
 
 
-
-        <!-- =====================================================
-             CONTACTO
-             ===================================================== -->
-
-        <section id="contacto" class="contact-section">
+        <!-- CONTACTO -->
+        <section id="contacto" class="section">
 
             <div class="section-header">
-
-                <p class="section-tag">
-                    HABLEMOS
-                </p>
-
+                <p class="section-tag">HABLEMOS</p>
                 <h2>Contacto</h2>
+                <p>Si deseas conocer más sobre mi trabajo, puedes contactarme.</p>
+            </div>
+
+            <div class="contact-card">
+
+                <p>📍 Puno, Perú</p>
 
                 <p>
-                    Si deseas conocer más sobre mi trabajo,
-                    puedes contactarme.
+                    💼 LinkedIn:
+                    <strong>www.linkedin.com/in/catterine-quispe</strong>
                 </p>
 
             </div>
 
-
-            <p>📍 Puno, Perú</p>
-
-            <p>
-                💼 LinkedIn:
-                <strong>
-                    www.linkedin.com/in/catterine-quispe
-                </strong>
-            </p>
-
         </section>
-
 
     </main>
 
 
-
-    <!-- =====================================================
-         FOOTER
-         ===================================================== -->
-
     <footer>
 
-        <p>
-            © 2026 Catterine Carely Quispe Quispe
-        </p>
+        <p>© 2026 Catterine Carely Quispe Quispe</p>
 
-        <p>
-            Estadística + Tecnología + Datos = Soluciones
-        </p>
+        <p>Estadística + Tecnología + Datos = Soluciones</p>
 
     </footer>
 
 
-
-    <!-- JAVASCRIPT -->
-
-    <script src="js/script.js"></script>
+    <script src="./js/script.js"></script>
 
 </body>
-
 </html>
+2. css/style.css
+
+Ahora entra a css → style.css → ✏️ Editar → Ctrl + A → pega TODO esto:
+
+/* =====================================================
+   CATTERINE DEV - ESTILO COMPLETO
+   ===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #292442;
+    background: #f8f7ff;
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+/* =====================================================
+   FONDO DE PARTICULAS
+   ===================================================== */
+
+#particle-canvas {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    background:
+        radial-gradient(circle at 10% 20%, rgba(124, 77, 255, 0.12), transparent 30%),
+        radial-gradient(circle at 90% 10%, rgba(170, 130, 255, 0.12), transparent 30%),
+        #f8f7ff;
+}
+
+/* =====================================================
+   NAVEGACION
+   ===================================================== */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(124, 77, 255, 0.1);
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: auto;
+    padding: 22px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.logo {
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: 800;
+    color: #292442;
+    white-space: nowrap;
+}
+
+.logo span {
+    color: #7657d9;
+}
+
+.menu {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #625d75;
+    font-weight: 600;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: #7657d9;
+}
+
+/* =====================================================
+   INICIO
+   ===================================================== */
+
+.hero {
+    min-height: 620px;
+    display: flex;
+    align-items: center;
+    padding: 70px 30px;
+    position: relative;
+}
+
+.hero-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    align-items: center;
+    gap: 50px;
+}
+
+.hero-text {
+    max-width: 720px;
+}
+
+/* NOMBRE COMPLETO DEL MISMO TAMAÑO */
+
+.nombre-principal {
+    font-size: clamp(38px, 4.5vw, 62px);
+    font-weight: 800;
+    line-height: 1.15;
+    color: #292442;
+    margin-bottom: 25px;
+    letter-spacing: -1.5px;
+}
+
+.hero h2 {
+    font-size: clamp(22px, 2.5vw, 30px);
+    color: #6b6680;
+    margin-bottom: 18px;
+}
+
+.texto-dinamico {
+    font-size: 23px;
+    font-weight: 700;
+    color: #7657d9;
+    min-height: 40px;
+    margin-bottom: 20px;
+}
+
+.cursor {
+    animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+    0%, 50% {
+        opacity: 1;
+    }
+
+    51%, 100% {
+        opacity: 0;
+    }
+}
+
+.descripcion {
+    color: #5e5972;
+    font-size: 17px;
+    max-width: 680px;
+    margin-bottom: 35px;
+}
+
+/* BOTONES */
+
+.botones {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 26px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.btn.principal {
+    background: #7657d9;
+    color: white;
+    box-shadow: 0 10px 25px rgba(118, 87, 217, 0.25);
+}
+
+.btn.principal:hover {
+    background: #6344c7;
+    transform: translateY(-3px);
+}
+
+.btn.secundario {
+    background: white;
+    color: #7657d9;
+    border: 1px solid #ddd8f5;
+}
+
+.btn.secundario:hover {
+    background: #f1edff;
+    transform: translateY(-3px);
+}
+
+/* =====================================================
+   FOTO
+   ===================================================== */
+
+.hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-circle {
+    width: 330px;
+    height: 330px;
+    border-radius: 50%;
+    border: 10px solid #7657d9;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    box-shadow:
+        0 0 0 15px rgba(118, 87, 217, 0.05),
+        0 20px 50px rgba(118, 87, 217, 0.15);
+    transition: 0.4s;
+}
+
+.image-circle:hover {
+    transform: translateY(-8px);
+    box-shadow:
+        0 0 0 15px rgba(118, 87, 217, 0.08),
+        0 25px 60px rgba(118, 87, 217, 0.25);
+}
+
+.image-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* =====================================================
+   SECCIONES
+   ===================================================== */
+
+.section {
+    max-width: 1200px;
+    margin: auto;
+    padding: 100px 30px;
+}
+
+.section-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 55px;
+}
+
+.section-tag {
+    color: #7657d9;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.section-header h2 {
+    font-size: 40px;
+    color: #292442;
+    margin-bottom: 15px;
+}
+
+.section-header p {
+    color: #6b6680;
+}
+
+/* =====================================================
+   SOBRE MI
+   ===================================================== */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-content h3 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    color: #625d75;
+    margin-bottom: 20px;
+}
+
+.about-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.about-card {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 25px;
+    border-radius: 18px;
+    border: 1px solid #e9e5f8;
+    transition: 0.3s;
+}
+
+.about-card:hover {
+    transform: translateY(-5px);
+    border-color: #7657d9;
+    box-shadow: 0 15px 35px rgba(118, 87, 217, 0.1);
+}
+
+.about-card span {
+    font-size: 30px;
+}
+
+.about-card h4 {
+    margin: 10px 0;
+}
+
+.about-card p {
+    color: #6b6680;
+    font-size: 14px;
+}
+
+/* =====================================================
+   FORMACION
+   ===================================================== */
+
+.timeline {
+    max-width: 800px;
+    margin: auto;
+}
+
+.timeline-item {
+    display: flex;
+    gap: 25px;
+}
+
+.timeline-dot {
+    width: 55px;
+    height: 55px;
+    min-width: 55px;
+    border-radius: 50%;
+    background: #7657d9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+}
+
+.timeline-content {
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+    border: 1px solid #e9e5f8;
+    width: 100%;
+}
+
+.timeline-content > span {
+    color: #7657d9;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.timeline-content h3 {
+    margin: 10px 0;
+    font-size: 24px;
+}
+
+.timeline-content p {
+    color: #6b6680;
+}
+
+.tags {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.tags span {
+    background: #f0edff;
+    color: #7657d9;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* =====================================================
+   EXPERIENCIA
+   ===================================================== */
+
+.experience-card {
+    background: white;
+    padding: 40px;
+    border-radius: 22px;
+    border: 1px solid #e9e5f8;
+    box-shadow: 0 15px 40px rgba(118, 87, 217, 0.05);
+}
+
+.experience-date {
+    color: #7657d9;
+    font-weight: 800;
+}
+
+.experience-card h3 {
+    font-size: 28px;
+    margin: 10px 0;
+}
+
+.experience-card h4 {
+    color: #7657d9;
+    margin-bottom: 20px;
+}
+
+.experience-card > p {
+    color: #625d75;
+    margin-bottom: 30px;
+}
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.experience-grid > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.experience-grid span {
+    font-size: 28px;
+}
+
+.experience-grid strong {
+    margin: 5px 0;
+}
+
+.experience-grid p {
+    color: #6b6680;
+    font-size: 14px;
+}
+
+/* =====================================================
+   TECNOLOGIAS
+   ===================================================== */
+
+.technologies {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.technologies div {
+    background: white;
+    border: 1px solid #e9e5f8;
+    padding: 18px 25px;
+    border-radius: 15px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.technologies div:hover {
+    transform: translateY(-5px);
+    background: #7657d9;
+    color: white;
+}
+
+/* =====================================================
+   PROYECTOS
+   ===================================================== */
+
+.project-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.project-card,
+.research-card,
+.contact-card {
+    background: white;
+    padding: 35px;
+    border-radius: 20px;
+    border: 1px solid #e9e5f8;
+    transition: 0.3s;
+}
+
+.project-card:hover,
+.research-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(118, 87, 217, 0.1);
+}
+
+.project-card h3 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.project-card p,
+.research-card p {
+    color: #625d75;
+    margin-bottom: 15px;
+}
+
+/* =====================================================
+   INVESTIGACION
+   ===================================================== */
+
+.research-card h3 {
+    font-size: 25px;
+    margin-bottom: 25px;
+}
+
+/* =====================================================
+   CONTACTO
+   ===================================================== */
+
+.contact-card {
+    max-width: 700px;
+    margin: auto;
+    text-align: center;
+}
+
+.contact-card p {
+    color: #625d75;
+    margin-bottom: 15px;
+}
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
+
+footer {
+    text-align: center;
+    padding: 35px;
+    background: #292442;
+    color: white;
+}
+
+footer p {
+    margin: 5px;
+}
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        flex-direction: column;
+    }
+
+    .menu {
+        gap: 15px;
+    }
+
+    .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-text {
+        max-width: 100%;
+    }
+
+    .descripcion {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .botones {
+        justify-content: center;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-image {
+        margin-top: 20px;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .navbar {
+        padding: 18px 15px;
+    }
+
+    .menu {
+        gap: 10px;
+    }
+
+    .menu a {
+        font-size: 13px;
+    }
+
+    .hero {
+        padding: 50px 20px;
+    }
+
+    .nombre-principal {
+        font-size: 38px;
+    }
+
+    .hero h2 {
+        font-size: 22px;
+    }
+
+    .image-circle {
+        width: 250px;
+        height: 250px;
+    }
+
+    .section {
+        padding: 70px 20px;
+    }
+
+    .section-header h2 {
+        font-size: 32px;
+    }
+
+    .about-cards,
+    .experience-grid,
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .experience-card {
+        padding: 25px;
+    }
+
+    .experience-card h3 {
+        font-size: 23px;
+    }
+
+}
