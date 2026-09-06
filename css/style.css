@@ -1,9 +1,4 @@
-/* =====================================================
-   CATTERINE DEV - PORTAFOLIO
-   ===================================================== */
-
-
-/* ---------- VARIABLES ---------- */
+/* ================= VARIABLES ================= */
 
 :root {
     --primary: #7657d9;
@@ -17,8 +12,7 @@
     --border: #e6e3ef;
 }
 
-
-/* ---------- CONFIGURACIÓN GENERAL ---------- */
+/* ================= GENERAL ================= */
 
 * {
     margin: 0;
@@ -45,13 +39,9 @@ section {
     scroll-margin-top: 80px;
 }
 
-
-/* ---------- FONDO DE PARTÍCULAS ---------- */
-
 #particle-canvas {
     position: fixed;
-    top: 0;
-    left: 0;
+    inset: 0;
     width: 100%;
     height: 100%;
     z-index: 0;
@@ -65,8 +55,7 @@ footer {
     z-index: 1;
 }
 
-
-/* ---------- NAVEGACIÓN ---------- */
+/* ================= NAVEGACIÓN ================= */
 
 header {
     position: fixed;
@@ -74,7 +63,7 @@ header {
     left: 0;
     width: 100%;
     z-index: 1000;
-    background: rgba(255, 255, 255, 0.92);
+    background: rgba(255, 255, 255, 0.94);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(230, 227, 239, 0.7);
 }
@@ -103,7 +92,7 @@ nav {
 .menu {
     display: flex;
     align-items: center;
-    gap: 25px;
+    gap: 22px;
 }
 
 .menu a {
@@ -111,22 +100,20 @@ nav {
     color: var(--gray);
     font-size: 0.92rem;
     font-weight: 600;
-    transition: color 0.3s ease;
+    transition: 0.3s ease;
 }
 
 .menu a:hover {
     color: var(--primary);
 }
 
-
-/* ---------- HERO ---------- */
+/* ================= HERO ================= */
 
 .hero {
     min-height: 100vh;
     padding: 120px 25px 80px;
     display: flex;
     align-items: center;
-
     background:
         radial-gradient(
             circle at 85% 20%,
@@ -156,9 +143,6 @@ nav {
     animation: aparecer 1s ease;
 }
 
-
-/* ---------- NOMBRE PRINCIPAL ---------- */
-
 .hero h1 {
     font-size: clamp(2.3rem, 4vw, 3.8rem);
     line-height: 1.1;
@@ -174,6 +158,20 @@ nav {
     margin-bottom: 10px;
 }
 
+.texto-dinamico {
+    margin-top: 12px;
+    min-height: 35px;
+    color: var(--primary);
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.cursor {
+    display: inline-block;
+    margin-left: 3px;
+    animation: parpadear 0.8s infinite;
+}
+
 .descripcion {
     max-width: 650px;
     margin-top: 20px;
@@ -181,8 +179,7 @@ nav {
     font-size: 1.05rem;
 }
 
-
-/* ---------- FOTO ---------- */
+/* ================= FOTO ================= */
 
 .hero-image {
     display: flex;
@@ -195,16 +192,12 @@ nav {
     height: 330px;
     padding: 10px;
     border-radius: 50%;
-
     background: linear-gradient(
         135deg,
         var(--primary),
         var(--secondary)
     );
-
-    box-shadow:
-        0 25px 60px rgba(118, 87, 217, 0.25);
-
+    box-shadow: 0 25px 60px rgba(118, 87, 217, 0.25);
     animation: flotar 4s ease-in-out infinite;
 }
 
@@ -212,12 +205,23 @@ nav {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 50%;
     display: block;
+    border-radius: 50%;
+    background: var(--white);
 }
 
+.image-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--white);
+    font-size: 7rem;
+}
 
-/* ---------- BOTONES ---------- */
+/* ================= BOTONES ================= */
 
 .botones {
     margin-top: 35px;
@@ -258,8 +262,7 @@ nav {
     transform: translateY(-3px);
 }
 
-
-/* ---------- SECCIONES ---------- */
+/* ================= SECCIONES ================= */
 
 section:not(.hero) {
     max-width: 1050px;
@@ -291,10 +294,12 @@ section:not(.hero) {
     font-size: 1.05rem;
 }
 
+/* ================= SOBRE MÍ ================= */
 
-/* ---------- SOBRE MÍ ---------- */
-
-.about-section {
+.about-section,
+.experience-section,
+.projects-section,
+.contact-section {
     background: var(--white);
 }
 
@@ -308,13 +313,11 @@ section:not(.hero) {
 .about-content h3 {
     margin-bottom: 20px;
     font-size: 1.8rem;
-    color: var(--dark);
 }
 
 .about-content p {
     margin-bottom: 18px;
     color: var(--gray);
-    font-size: 1rem;
 }
 
 .about-cards {
@@ -345,7 +348,6 @@ section:not(.hero) {
 
 .about-card h4 {
     margin-bottom: 7px;
-    color: var(--dark);
 }
 
 .about-card p {
@@ -353,10 +355,11 @@ section:not(.hero) {
     font-size: 0.9rem;
 }
 
+/* ================= FORMACIÓN ================= */
 
-/* ---------- FORMACIÓN ---------- */
-
-.education-section {
+.education-section,
+.technologies-section,
+.research-section {
     background: var(--very-light);
 }
 
@@ -379,7 +382,6 @@ section:not(.hero) {
 
 .timeline-item {
     position: relative;
-    padding-bottom: 20px;
 }
 
 .timeline-dot {
@@ -394,7 +396,6 @@ section:not(.hero) {
     background: var(--white);
     border: 2px solid var(--primary);
     border-radius: 50%;
-    font-size: 0.8rem;
     z-index: 2;
 }
 
@@ -416,7 +417,6 @@ section:not(.hero) {
 
 .timeline-content h3 {
     margin-bottom: 10px;
-    color: var(--dark);
     font-size: 1.35rem;
 }
 
@@ -424,15 +424,18 @@ section:not(.hero) {
     color: var(--gray);
 }
 
-.education-tags {
+.education-tags,
+.experience-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
     margin-top: 20px;
 }
 
-.education-tags span {
-    padding: 5px 12px;
+.education-tags span,
+.experience-tags span,
+.experience-type {
+    padding: 6px 13px;
     color: var(--primary);
     background: var(--light-purple);
     border-radius: 20px;
@@ -440,12 +443,7 @@ section:not(.hero) {
     font-weight: 600;
 }
 
-
-/* ---------- EXPERIENCIA ---------- */
-
-.experience-section {
-    background: var(--white);
-}
+/* ================= EXPERIENCIA ================= */
 
 .experience-timeline {
     position: relative;
@@ -461,7 +459,6 @@ section:not(.hero) {
     top: 10px;
     width: 2px;
     height: calc(100% - 20px);
-
     background: linear-gradient(
         to bottom,
         var(--primary),
@@ -485,9 +482,7 @@ section:not(.hero) {
     background: var(--white);
     border: 2px solid var(--primary);
     border-radius: 50%;
-    font-size: 0.9rem;
     z-index: 2;
-    box-shadow: 0 5px 15px rgba(118, 87, 217, 0.15);
 }
 
 .experience-card {
@@ -496,13 +491,6 @@ section:not(.hero) {
     border: 1px solid var(--border);
     border-radius: 22px;
     box-shadow: 0 12px 35px rgba(50, 40, 80, 0.06);
-    transition: 0.3s ease;
-}
-
-.experience-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 45px rgba(50, 40, 80, 0.10);
-    border-color: var(--secondary);
 }
 
 .experience-top {
@@ -519,36 +507,21 @@ section:not(.hero) {
     color: var(--primary);
     font-size: 0.85rem;
     font-weight: 800;
-    letter-spacing: 1px;
 }
 
 .experience-card h3 {
     margin-bottom: 7px;
-    color: var(--dark);
     font-size: 1.4rem;
-    line-height: 1.4;
 }
 
 .experience-card h4 {
     color: var(--gray);
     font-size: 0.95rem;
-    font-weight: 600;
-}
-
-.experience-type {
-    flex-shrink: 0;
-    padding: 7px 13px;
-    color: var(--primary);
-    background: var(--light-purple);
-    border-radius: 20px;
-    font-size: 0.75rem;
-    font-weight: 700;
 }
 
 .experience-description {
     margin-bottom: 28px;
     color: var(--gray);
-    font-size: 0.98rem;
 }
 
 .experience-grid {
@@ -575,37 +548,15 @@ section:not(.hero) {
 .experience-feature strong {
     display: block;
     margin-bottom: 4px;
-    color: var(--dark);
     font-size: 0.9rem;
 }
 
 .experience-feature p {
     color: var(--gray);
     font-size: 0.82rem;
-    line-height: 1.5;
 }
 
-.experience-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-
-.experience-tags span {
-    padding: 6px 13px;
-    color: var(--primary);
-    background: var(--light-purple);
-    border-radius: 20px;
-    font-size: 0.78rem;
-    font-weight: 600;
-}
-
-
-/* ---------- TECNOLOGÍAS ---------- */
-
-.technologies-section {
-    background: var(--very-light);
-}
+/* ================= TECNOLOGÍAS ================= */
 
 .tecnologias {
     display: grid;
@@ -629,8 +580,7 @@ section:not(.hero) {
     border-color: var(--secondary);
 }
 
-
-/* ---------- PROYECTOS E INVESTIGACIÓN ---------- */
+/* ================= PROYECTOS E INVESTIGACIÓN ================= */
 
 article {
     background: var(--white);
@@ -662,10 +612,6 @@ article strong {
     color: var(--primary);
 }
 
-.projects-section {
-    background: var(--white);
-}
-
 .projects-section article {
     position: relative;
     overflow: hidden;
@@ -681,21 +627,15 @@ article strong {
     background: var(--primary);
 }
 
-.research-section {
-    background: var(--very-light);
-}
-
 .research-section article h3 {
     color: var(--primary);
     line-height: 1.5;
 }
 
-
-/* ---------- CONTACTO ---------- */
+/* ================= CONTACTO ================= */
 
 .contact-section {
     text-align: center;
-    background: var(--white);
 }
 
 .contact-section .section-header {
@@ -718,13 +658,12 @@ article strong {
     text-decoration: underline;
 }
 
-
-/* ---------- FOOTER ---------- */
+/* ================= FOOTER ================= */
 
 footer {
     padding: 35px 20px;
     text-align: center;
-    color: #ffffff;
+    color: white;
     background: var(--dark);
 }
 
@@ -736,25 +675,7 @@ footer p:last-child {
     color: #bcb7cf;
 }
 
-
-/* ---------- TEXTO DINÁMICO ---------- */
-
-.texto-dinamico {
-    margin-top: 12px;
-    min-height: 35px;
-    color: var(--primary);
-    font-size: 1.25rem;
-    font-weight: 700;
-}
-
-.cursor {
-    display: inline-block;
-    margin-left: 3px;
-    animation: parpadear 0.8s infinite;
-}
-
-
-/* ---------- ANIMACIONES ---------- */
+/* ================= ANIMACIONES ================= */
 
 @keyframes aparecer {
     from {
@@ -769,8 +690,7 @@ footer p:last-child {
 }
 
 @keyframes flotar {
-    0%,
-    100% {
+    0%, 100% {
         transform: translateY(0);
     }
 
@@ -780,22 +700,18 @@ footer p:last-child {
 }
 
 @keyframes parpadear {
-    0%,
-    50% {
+    0%, 50% {
         opacity: 1;
     }
 
-    51%,
-    100% {
+    51%, 100% {
         opacity: 0;
     }
 }
 
-
-/* ---------- RESPONSIVE ---------- */
+/* ================= RESPONSIVE ================= */
 
 @media (max-width: 850px) {
-
     .menu {
         gap: 12px;
     }
@@ -807,36 +723,20 @@ footer p:last-child {
     .hero h1 {
         font-size: 3.2rem;
     }
-
 }
 
 @media (max-width: 750px) {
-
     .about-grid {
         grid-template-columns: 1fr;
         gap: 35px;
     }
 
-    .about-cards {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
     .section-header h2 {
         font-size: 2rem;
     }
-
-    .timeline {
-        padding-left: 30px;
-    }
-
-    .timeline-dot {
-        left: -30px;
-    }
-
 }
 
 @media (max-width: 700px) {
-
     .experience-timeline {
         padding-left: 32px;
     }
@@ -849,7 +749,6 @@ footer p:last-child {
         left: -32px;
         width: 26px;
         height: 26px;
-        font-size: 0.75rem;
     }
 
     .experience-card {
@@ -864,11 +763,9 @@ footer p:last-child {
     .experience-grid {
         grid-template-columns: 1fr;
     }
-
 }
 
 @media (max-width: 650px) {
-
     header {
         position: relative;
     }
@@ -907,6 +804,10 @@ footer p:last-child {
         height: 230px;
     }
 
+    .image-placeholder {
+        font-size: 5rem;
+    }
+
     .descripcion {
         margin-left: auto;
         margin-right: auto;
@@ -919,11 +820,9 @@ footer p:last-child {
     section:not(.hero) {
         padding: 70px 20px;
     }
-
 }
 
 @media (max-width: 500px) {
-
     .about-cards {
         grid-template-columns: 1fr;
     }
@@ -936,37 +835,8 @@ footer p:last-child {
         font-size: 1.1rem;
     }
 
-    .section-header h2 {
-        font-size: 2rem;
-    }
-
     .image-circle {
         width: 210px;
         height: 210px;
     }
-
-    .experience-card {
-        padding: 22px;
-    }
-
-    .timeline-content {
-        padding: 22px;
-    }
-
-    .about-card {
-        padding: 20px;
-    }
-
-    .tecnologias {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .tecnologias div {
-        padding: 20px 10px;
-    }
-
-    .contact-section p {
-        font-size: 0.9rem;
-    }
-
 }
