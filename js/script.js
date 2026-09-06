@@ -2,83 +2,86 @@
    CATTERINE DEV - JAVASCRIPT
    ===================================================== */
 
+document.addEventListener("DOMContentLoaded", function () {
 
-/* =====================================================
-   TEXTO DINÁMICO
-   ===================================================== */
+    /* =====================================================
+       TEXTO DINAMICO
+       ===================================================== */
 
-const textoDinamico = document.getElementById("texto-dinamico");
+    const textoDinamico = document.getElementById("texto-dinamico");
 
-const textos = [
-    "Análisis de datos",
-    "Programación en Python",
-    "Automatización de procesos",
-    "Visualización estadística",
-    "Ciencia de datos"
-];
+    const textos = [
+        "Análisis de datos",
+        "Programación en Python",
+        "Automatización de procesos",
+        "Visualización estadística",
+        "Ciencia de datos"
+    ];
 
-let indiceTexto = 0;
-let indiceLetra = 0;
-let borrando = false;
+    let indiceTexto = 0;
+    let indiceLetra = 0;
+    let borrando = false;
 
-function escribirTexto() {
+    function escribirTexto() {
 
-    if (!textoDinamico) return;
+        if (!textoDinamico) return;
 
-    const textoActual = textos[indiceTexto];
+        const textoActual = textos[indiceTexto];
 
-    if (!borrando) {
+        if (!borrando) {
 
-        textoDinamico.textContent =
-            textoActual.substring(0, indiceLetra + 1);
+            textoDinamico.textContent =
+                textoActual.substring(0, indiceLetra + 1);
 
-        indiceLetra++;
+            indiceLetra++;
 
-        if (indiceLetra === textoActual.length) {
+            if (indiceLetra === textoActual.length) {
 
-            borrando = true;
+                borrando = true;
 
-            setTimeout(escribirTexto, 1800);
+                setTimeout(escribirTexto, 1800);
 
-            return;
-        }
+                return;
+            }
 
-    } else {
+        } else {
 
-        textoDinamico.textContent =
-            textoActual.substring(0, indiceLetra - 1);
+            textoDinamico.textContent =
+                textoActual.substring(0, indiceLetra - 1);
 
-        indiceLetra--;
+            indiceLetra--;
 
-        if (indiceLetra === 0) {
+            if (indiceLetra === 0) {
 
-            borrando = false;
+                borrando = false;
 
-            indiceTexto++;
+                indiceTexto++;
 
-            if (indiceTexto === textos.length) {
-                indiceTexto = 0;
+                if (indiceTexto === textos.length) {
+                    indiceTexto = 0;
+                }
+
             }
 
         }
 
+        setTimeout(escribirTexto, borrando ? 45 : 90);
+
     }
 
-    setTimeout(escribirTexto, borrando ? 45 : 90);
-
-}
-
-escribirTexto();
+    escribirTexto();
 
 
+    /* =====================================================
+       PARTICULAS MORADAS
+       ===================================================== */
 
-/* =====================================================
-   PARTICULAS MORADAS
-   ===================================================== */
+    const canvas = document.getElementById("particle-canvas");
 
-const canvas = document.getElementById("particle-canvas");
-
-if (canvas) {
+    if (!canvas) {
+        console.error("No se encontró el canvas de partículas.");
+        return;
+    }
 
     const ctx = canvas.getContext("2d");
 
@@ -90,7 +93,9 @@ if (canvas) {
     };
 
 
-    /* ---------- TAMAÑO DEL CANVAS ---------- */
+    /* =====================================================
+       TAMAÑO DEL CANVAS
+       ===================================================== */
 
     function resizeCanvas() {
 
@@ -106,8 +111,9 @@ if (canvas) {
     window.addEventListener("resize", resizeCanvas);
 
 
-
-    /* ---------- CURSOR ---------- */
+    /* =====================================================
+       CURSOR
+       ===================================================== */
 
     window.addEventListener("mousemove", function (event) {
 
@@ -124,8 +130,9 @@ if (canvas) {
     });
 
 
-
-    /* ---------- PARTICULA ---------- */
+    /* =====================================================
+       PARTICULA
+       ===================================================== */
 
     class Particle {
 
@@ -136,19 +143,21 @@ if (canvas) {
 
             this.size = Math.random() * 2.5 + 1;
 
-            this.speedX = Math.random() * 0.5 - 0.25;
-            this.speedY = Math.random() * 0.5 - 0.25;
+            this.speedX = Math.random() * 0.4 - 0.2;
+            this.speedY = Math.random() * 0.4 - 0.2;
 
         }
 
 
         update() {
 
+            /* MOVIMIENTO LENTO */
+
             this.x += this.speedX;
             this.y += this.speedY;
 
 
-            /* ---------- REACCION AL CURSOR ---------- */
+            /* REACCION AL CURSOR */
 
             if (mouse.x !== null && mouse.y !== null) {
 
@@ -159,22 +168,22 @@ if (canvas) {
                     dx * dx + dy * dy
                 );
 
-                const radius = 120;
+                const radius = 150;
 
                 if (distance < radius && distance > 0) {
 
                     const fuerza =
                         (radius - distance) / radius;
 
-                    this.x += (dx / distance) * fuerza * 2;
-                    this.y += (dy / distance) * fuerza * 2;
+                    this.x += (dx / distance) * fuerza * 2.5;
+                    this.y += (dy / distance) * fuerza * 2.5;
 
                 }
 
             }
 
 
-            /* ---------- REAPARECER POR EL OTRO LADO ---------- */
+            /* REAPARECER POR EL OTRO LADO */
 
             if (this.x < 0) {
                 this.x = canvas.width;
@@ -208,12 +217,12 @@ if (canvas) {
             );
 
             ctx.fillStyle =
-                "rgba(118, 87, 217, 0.55)";
+                "rgba(118, 87, 217, 0.75)";
 
             ctx.shadowBlur = 8;
 
             ctx.shadowColor =
-                "rgba(118, 87, 217, 0.5)";
+                "rgba(118, 87, 217, 0.6)";
 
             ctx.fill();
 
@@ -222,8 +231,9 @@ if (canvas) {
     }
 
 
-
-    /* ---------- CREAR PARTICULAS ---------- */
+    /* =====================================================
+       CREAR PARTICULAS
+       ===================================================== */
 
     function createParticles() {
 
@@ -237,7 +247,7 @@ if (canvas) {
 
         } else {
 
-            cantidad = 80;
+            cantidad = 100;
 
         }
 
@@ -252,18 +262,15 @@ if (canvas) {
     }
 
 
-
-    /* ---------- CONECTAR PARTICULAS ---------- */
+    /* =====================================================
+       CONECTAR PARTICULAS
+       ===================================================== */
 
     function connectParticles() {
 
         for (let a = 0; a < particles.length; a++) {
 
-            for (
-                let b = a + 1;
-                b < particles.length;
-                b++
-            ) {
+            for (let b = a + 1; b < particles.length; b++) {
 
                 const dx =
                     particles[a].x -
@@ -282,7 +289,7 @@ if (canvas) {
                         1 - distance / 100;
 
                     ctx.strokeStyle =
-                        `rgba(118, 87, 217, ${opacity * 0.12})`;
+                        `rgba(118, 87, 217, ${opacity * 0.18})`;
 
                     ctx.lineWidth = 1;
 
@@ -309,8 +316,9 @@ if (canvas) {
     }
 
 
-
-    /* ---------- ANIMACION ---------- */
+    /* =====================================================
+       ANIMACION
+       ===================================================== */
 
     function animateParticles() {
 
@@ -321,7 +329,6 @@ if (canvas) {
             canvas.height
         );
 
-
         particles.forEach(function (particle) {
 
             particle.update();
@@ -330,9 +337,7 @@ if (canvas) {
 
         });
 
-
         connectParticles();
-
 
         requestAnimationFrame(
             animateParticles
@@ -342,4 +347,4 @@ if (canvas) {
 
     animateParticles();
 
-}
+});
