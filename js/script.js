@@ -1,10 +1,3 @@
-/* =====================================================
-   CATTERINE DEV - JAVASCRIPT
-   Texto dinámico + partículas + destello del mouse
-   ===================================================== */
-
-
-/* ---------- TEXTO DINÁMICO ---------- */
 
 const textos = [
     "Python 🐍",
@@ -13,7 +6,7 @@ const textos = [
     "Estadística 📈"
 ];
 
-const elementoTexto = document.getElementById("texto-dinamico");
+const elemento = document.getElementById("texto-dinamico");
 
 let indiceTexto = 0;
 let indiceCaracter = 0;
@@ -21,331 +14,249 @@ let borrando = false;
 
 function escribirTexto() {
 
-    if (!elementoTexto) {
-        return;
-    }
-
     const textoActual = textos[indiceTexto];
 
     if (!borrando) {
 
-        elementoTexto.textContent =
+        elemento.textContent =
             textoActual.substring(0, indiceCaracter + 1);
 
         indiceCaracter++;
 
         if (indiceCaracter === textoActual.length) {
-
             borrando = true;
-
             setTimeout(escribirTexto, 1800);
-
             return;
         }
 
     } else {
 
-        elementoTexto.textContent =
+        elemento.textContent =
             textoActual.substring(0, indiceCaracter - 1);
 
         indiceCaracter--;
 
         if (indiceCaracter === 0) {
-
             borrando = false;
-
             indiceTexto = (indiceTexto + 1) % textos.length;
         }
+
     }
 
-    setTimeout(
-        escribirTexto,
-        borrando ? 50 : 100
-    );
+    setTimeout(escribirTexto, borrando ? 50 : 100);
+
 }
 
 escribirTexto();
 
-
 /* =====================================================
-   PARTÍCULAS Y DESTELLO DEL MOUSE
+   PARTICULAS MORADAS ANIMADAS
    ===================================================== */
 
 const canvas = document.getElementById("particle-canvas");
+const ctx = canvas.getContext("2d");
 
-if (canvas) {
+let particles = [];
 
-    const ctx = canvas.getContext("2d");
+let mouse = {
+    x: null,
+    y: null
+};
 
-    let particles = [];
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
 
-    const mouse = {
-        x: null,
-        y: null,
-        active: false
-    };
+resizeCanvas();
+
+window.addEventListener("resize", resizeCanvas);
 
 
-    /* ---------- TAMAÑO DEL CANVAS ---------- */
+/* ---------- CURSOR ---------- */
 
-    function resizeCanvas() {
+window.addEventListener("mousemove", function (event) {
 
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+    mouse.x = event.clientX;
+    mouse.y = event.clientY;
 
-        createParticles();
+});
+
+window.addEventListener("mouseleave", function () {
+
+    mouse.x = null;
+    mouse.y = null;
+
+});
+
+
+/* ---------- PARTICULA ---------- */
+
+class Particle {
+
+    constructor() {
+
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+
+        this.size = Math.random() * 2.5 + 1;
+
+        this.speedX = Math.random() * 0.5 - 0.25;
+        this.speedY = Math.random() * 0.5 - 0.25;
+
     }
 
-    resizeCanvas();
 
-    window.addEventListener("resize", resizeCanvas);
+    update() {
 
-
-    /* ---------- CURSOR / MOUSE ---------- */
-
-    window.addEventListener("mousemove", function (event) {
-
-        mouse.x = event.clientX;
-        mouse.y = event.clientY;
-        mouse.active = true;
-
-    });
-
-    window.addEventListener("mouseleave", function () {
-
-        mouse.x = null;
-        mouse.y = null;
-        mouse.active = false;
-
-    });
+        this.x += this.speedX;
+        this.y += this.speedY;
 
 
-    /* ---------- PARTÍCULA ---------- */
+        /* REACCION AL CURSOR */
 
-    class Particle {
+        if (mouse.x !== null && mouse.y !== null) {
 
-        constructor() {
+            const dx = this.x - mouse.x;
+            const dy = this.y - mouse.y;
 
-            this.x = Math.random() * canvas.width;
-            this.y = Math.random() * canvas.height;
-
-            this.size = Math.random() * 2.5 + 1;
-
-            this.speedX = Math.random() * 0.5 - 0.25;
-            this.speedY = Math.random() * 0.5 - 0.25;
-
-        }
-
-
-        update() {
-
-            this.x += this.speedX;
-            this.y += this.speedY;
-
-
-            /* REACCIÓN AL CURSOR */
-
-            if (
-                mouse.active &&
-                mouse.x !== null &&
-                mouse.y !== null
-            ) {
-
-                const dx = this.x - mouse.x;
-                const dy = this.y - mouse.y;
-
-                const distance = Math.sqrt(
-                    dx * dx + dy * dy
-                );
-
-                const radius = 140;
-
-                if (distance < radius && distance > 0) {
-
-                    const fuerza =
-                        (radius - distance) / radius;
-
-                    this.x +=
-                        (dx / distance) * fuerza * 2;
-
-                    this.y +=
-                        (dy / distance) * fuerza * 2;
-                }
-            }
-
-
-            /* APARECER POR EL OTRO LADO */
-
-            if (this.x < 0) {
-                this.x = canvas.width;
-            }
-
-            if (this.x > canvas.width) {
-                this.x = 0;
-            }
-
-            if (this.y < 0) {
-                this.y = canvas.height;
-            }
-
-            if (this.y > canvas.height) {
-                this.y = 0;
-            }
-
-        }
-
-
-        draw() {
-
-            ctx.beginPath();
-
-            ctx.arc(
-                this.x,
-                this.y,
-                this.size,
-                0,
-                Math.PI * 2
+            const distance = Math.sqrt(
+                dx * dx + dy * dy
             );
 
-            ctx.fillStyle =
-                "rgba(118, 87, 217, 0.55)";
+            const radius = 120;
 
-            ctx.shadowBlur = 8;
+            if (distance < radius && distance > 0) {
 
-            ctx.shadowColor =
-                "rgba(118, 87, 217, 0.5)";
+                const fuerza =
+                    (radius - distance) / radius;
 
-            ctx.fill();
+                this.x += (dx / distance) * fuerza * 2;
+                this.y += (dy / distance) * fuerza * 2;
 
-            ctx.shadowBlur = 0;
+            }
 
+        }
+
+
+        /* APARECER POR EL OTRO LADO */
+
+        if (this.x < 0) {
+            this.x = canvas.width;
+        }
+
+        if (this.x > canvas.width) {
+            this.x = 0;
+        }
+
+        if (this.y < 0) {
+            this.y = canvas.height;
+        }
+
+        if (this.y > canvas.height) {
+            this.y = 0;
         }
 
     }
 
 
-    /* ---------- CREAR PARTÍCULAS ---------- */
-
-    function createParticles() {
-
-        particles = [];
-
-        let cantidad;
-
-        if (window.innerWidth < 600) {
-            cantidad = 35;
-        } else {
-            cantidad = 80;
-        }
-
-        for (let i = 0; i < cantidad; i++) {
-
-            particles.push(
-                new Particle()
-            );
-
-        }
-
-    }
-
-    createParticles();
-
-
-    /* ---------- DESTELLO DEL MOUSE ---------- */
-
-    function drawMouseGlow() {
-
-        if (
-            !mouse.active ||
-            mouse.x === null ||
-            mouse.y === null
-        ) {
-            return;
-        }
-
-        const gradient = ctx.createRadialGradient(
-            mouse.x,
-            mouse.y,
-            0,
-            mouse.x,
-            mouse.y,
-            150
-        );
-
-        gradient.addColorStop(
-            0,
-            "rgba(155, 123, 234, 0.20)"
-        );
-
-        gradient.addColorStop(
-            0.35,
-            "rgba(118, 87, 217, 0.08)"
-        );
-
-        gradient.addColorStop(
-            1,
-            "rgba(118, 87, 217, 0)"
-        );
+    draw() {
 
         ctx.beginPath();
 
         ctx.arc(
-            mouse.x,
-            mouse.y,
-            150,
+            this.x,
+            this.y,
+            this.size,
             0,
             Math.PI * 2
         );
 
-        ctx.fillStyle = gradient;
+        ctx.fillStyle = "rgba(118, 87, 217, 0.55)";
+
+        ctx.shadowBlur = 8;
+        ctx.shadowColor = "rgba(118, 87, 217, 0.5)";
+
         ctx.fill();
 
     }
 
+}
 
-    /* ---------- CONECTAR PARTÍCULAS ---------- */
 
-    function connectParticles() {
+/* ---------- CREAR PARTICULAS ---------- */
 
-        for (let a = 0; a < particles.length; a++) {
+function createParticles() {
 
-            for (let b = a + 1; b < particles.length; b++) {
+    particles = [];
 
-                const dx =
-                    particles[a].x - particles[b].x;
+    let cantidad;
 
-                const dy =
-                    particles[a].y - particles[b].y;
+    if (window.innerWidth < 600) {
+        cantidad = 35;
+    } else {
+        cantidad = 80;
+    }
 
-                const distance = Math.sqrt(
-                    dx * dx + dy * dy
+    for (let i = 0; i < cantidad; i++) {
+
+        particles.push(
+            new Particle()
+        );
+
+    }
+
+}
+
+createParticles();
+
+
+/* ---------- CONECTAR PARTICULAS ---------- */
+
+function connectParticles() {
+
+    for (let a = 0; a < particles.length; a++) {
+
+        for (
+            let b = a + 1;
+            b < particles.length;
+            b++
+        ) {
+
+            const dx =
+                particles[a].x -
+                particles[b].x;
+
+            const dy =
+                particles[a].y -
+                particles[b].y;
+
+            const distance =
+                Math.sqrt(dx * dx + dy * dy);
+
+            if (distance < 100) {
+
+                const opacity =
+                    1 - distance / 100;
+
+                ctx.strokeStyle =
+                    `rgba(118, 87, 217, ${opacity * 0.12})`;
+
+                ctx.lineWidth = 1;
+
+                ctx.beginPath();
+
+                ctx.moveTo(
+                    particles[a].x,
+                    particles[a].y
                 );
 
-                if (distance < 100) {
+                ctx.lineTo(
+                    particles[b].x,
+                    particles[b].y
+                );
 
-                    const opacity =
-                        1 - distance / 100;
-
-                    ctx.strokeStyle =
-                        `rgba(118, 87, 217, ${opacity * 0.12})`;
-
-                    ctx.lineWidth = 1;
-
-                    ctx.beginPath();
-
-                    ctx.moveTo(
-                        particles[a].x,
-                        particles[a].y
-                    );
-
-                    ctx.lineTo(
-                        particles[b].x,
-                        particles[b].y
-                    );
-
-                    ctx.stroke();
-
-                }
+                ctx.stroke();
 
             }
 
@@ -353,35 +264,41 @@ if (canvas) {
 
     }
 
+}
 
-    /* ---------- ANIMACIÓN ---------- */
 
-    function animateParticles() {
+/* ---------- ANIMACION ---------- */
 
-        ctx.clearRect(
-            0,
-            0,
-            canvas.width,
-            canvas.height
-        );
+function animateParticles() {
 
-        drawMouseGlow();
+    ctx.clearRect(
+        0,
+        0,
+        canvas.width,
+        canvas.height
+    );
 
-        particles.forEach(function (particle) {
+
+    particles.forEach(
+        particle => {
 
             particle.update();
             particle.draw();
 
-        });
+        }
+    );
 
-        connectParticles();
 
-        requestAnimationFrame(
-            animateParticles
-        );
+    connectParticles();
 
-    }
 
-    animateParticles();
+    requestAnimationFrame(
+        animateParticles
+    );
 
 }
+
+animateParticles();
+
+
+
