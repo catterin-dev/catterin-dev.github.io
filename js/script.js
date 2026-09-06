@@ -1,14 +1,24 @@
+/* =====================================================
+   CATTERINE DEV - JAVASCRIPT
+   ===================================================== */
+
+
+/* =====================================================
+   TEXTO DINAMICO
+   ===================================================== */
+
+const textoDinamico = document.getElementById("texto-dinamico");
+
 const textos = [
-    "Python 🐍",
-    "Análisis de datos 📊",
-    "Automatización ⚙️",
-    "Estadística 📈"
+    "Análisis de datos",
+    "Programación en Python",
+    "Automatización de procesos",
+    "Visualización estadística",
+    "Ciencia de datos"
 ];
 
-const elemento = document.getElementById("texto-dinamico");
-
 let indiceTexto = 0;
-let indiceCaracter = 0;
+let indiceLetra = 0;
 let borrando = false;
 
 function escribirTexto() {
@@ -17,39 +27,51 @@ function escribirTexto() {
 
     if (!borrando) {
 
-        elemento.textContent =
-            textoActual.substring(0, indiceCaracter + 1);
+        textoDinamico.textContent =
+            textoActual.substring(0, indiceLetra + 1);
 
-        indiceCaracter++;
+        indiceLetra++;
 
-        if (indiceCaracter === textoActual.length) {
+        if (indiceLetra === textoActual.length) {
+
             borrando = true;
+
             setTimeout(escribirTexto, 1800);
+
             return;
         }
 
     } else {
 
-        elemento.textContent =
-            textoActual.substring(0, indiceCaracter - 1);
+        textoDinamico.textContent =
+            textoActual.substring(0, indiceLetra - 1);
 
-        indiceCaracter--;
+        indiceLetra--;
 
-        if (indiceCaracter === 0) {
+        if (indiceLetra === 0) {
+
             borrando = false;
-            indiceTexto = (indiceTexto + 1) % textos.length;
+
+            indiceTexto++;
+
+            if (indiceTexto === textos.length) {
+                indiceTexto = 0;
+            }
+
         }
 
     }
 
-    setTimeout(escribirTexto, borrando ? 50 : 100);
+    setTimeout(escribirTexto, borrando ? 45 : 90);
 
 }
 
 escribirTexto();
 
+
+
 /* =====================================================
-   PARTICULAS MORADAS ANIMADAS
+   PARTICULAS MORADAS
    ===================================================== */
 
 const canvas = document.getElementById("particle-canvas");
@@ -62,14 +84,22 @@ let mouse = {
     y: null
 };
 
+
+/* ---------- TAMAÑO DEL CANVAS ---------- */
+
 function resizeCanvas() {
+
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
+
+    createParticles();
+
 }
 
 resizeCanvas();
 
 window.addEventListener("resize", resizeCanvas);
+
 
 
 /* ---------- CURSOR ---------- */
@@ -87,6 +117,7 @@ window.addEventListener("mouseleave", function () {
     mouse.y = null;
 
 });
+
 
 
 /* ---------- PARTICULA ---------- */
@@ -138,7 +169,7 @@ class Particle {
         }
 
 
-        /* APARECER POR EL OTRO LADO */
+        /* REAPARECER POR EL OTRO LADO */
 
         if (this.x < 0) {
             this.x = canvas.width;
@@ -171,16 +202,20 @@ class Particle {
             Math.PI * 2
         );
 
-        ctx.fillStyle = "rgba(118, 87, 217, 0.55)";
+        ctx.fillStyle =
+            "rgba(118, 87, 217, 0.55)";
 
         ctx.shadowBlur = 8;
-        ctx.shadowColor = "rgba(118, 87, 217, 0.5)";
+
+        ctx.shadowColor =
+            "rgba(118, 87, 217, 0.5)";
 
         ctx.fill();
 
     }
 
 }
+
 
 
 /* ---------- CREAR PARTICULAS ---------- */
@@ -192,9 +227,13 @@ function createParticles() {
     let cantidad;
 
     if (window.innerWidth < 600) {
+
         cantidad = 35;
+
     } else {
+
         cantidad = 80;
+
     }
 
     for (let i = 0; i < cantidad; i++) {
@@ -207,7 +246,6 @@ function createParticles() {
 
 }
 
-createParticles();
 
 
 /* ---------- CONECTAR PARTICULAS ---------- */
@@ -266,6 +304,7 @@ function connectParticles() {
 }
 
 
+
 /* ---------- ANIMACION ---------- */
 
 function animateParticles() {
@@ -278,14 +317,13 @@ function animateParticles() {
     );
 
 
-    particles.forEach(
-        particle => {
+    particles.forEach(function (particle) {
 
-            particle.update();
-            particle.draw();
+        particle.update();
 
-        }
-    );
+        particle.draw();
+
+    });
 
 
     connectParticles();
