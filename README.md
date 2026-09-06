@@ -1,43 +1,36 @@
-# Catterine Dev
+# ✨ Catterine Dev — Portafolio Profesional
 
-## Portafolio profesional
+## 👩‍💻 Br. Catterine Carely Quispe Quispe
 
-Bienvenido a mi portafolio profesional.
+**Bachiller en Ingeniería Estadística e Informática**
 
-Soy **Br. Catterine Carely Quispe Quispe**, Bachiller en Ingeniería Estadística e Informática, interesada en el análisis de datos, programación, automatización de procesos y desarrollo de soluciones tecnológicas.
+Portafolio profesional enfocado en la combinación de **estadística, tecnología y análisis de datos**, con interés en el desarrollo de soluciones mediante programación, automatización y visualización de información.
 
-Mi objetivo es transformar datos en información útil mediante la estadística, la programación y las tecnologías de información.
-
----
-
-## Tecnologías utilizadas
-
-Este portafolio fue desarrollado utilizando:
-
-- HTML5
-- CSS3
-- JavaScript
-- Git
-- GitHub Pages
+🌐 **Portafolio:** [catterin-dev.github.io](https://catterin-dev.github.io)
 
 ---
 
-## Áreas de interés
+## 📊 Sobre mí
 
-- Análisis de datos
-- Estadística aplicada
-- Programación en Python
-- Automatización de procesos
-- Visualización de datos
-- Generación de reportes estadísticos
-- Sistemas de información
-- Investigación aplicada
+Soy Bachiller en Ingeniería Estadística e Informática, interesada en el análisis de datos, la programación, la automatización de procesos y el desarrollo de soluciones tecnológicas.
+
+Mi formación integra conocimientos de estadística, informática y tecnologías de información, con especial interés en:
+
+* Análisis y procesamiento de datos.
+* Programación en Python.
+* Automatización de procesos.
+* Visualización de información.
+* Elaboración de reportes estadísticos.
+* Investigación aplicada.
+* Desarrollo de soluciones tecnológicas.
+
+Actualmente continúo fortaleciendo mis conocimientos en programación, ciencia de datos, automatización y tecnologías de información.
 
 ---
 
-## Formación académica
+## 🎓 Formación académica
 
-### Universidad Nacional del Altiplano
+**Universidad Nacional del Altiplano — Puno**
 
 **Ingeniería Estadística e Informática**
 
@@ -45,91 +38,158 @@ Bachiller en Ingeniería Estadística e Informática.
 
 Áreas de formación:
 
-- Estadística
-- Programación
-- Análisis de datos
-- Sistemas de información
-- Tecnologías de información
+* Estadística.
+* Programación.
+* Análisis de datos.
+* Sistemas de información.
+* Tecnologías de información.
+* Investigación aplicada.
 
 ---
 
-## Experiencia profesional
+## 💼 Experiencia profesional
 
-### Instituto Nacional de Estadística e Informática – INEI
+### Instituto Nacional de Estadística e Informática — INEI
 
 **ODEI Puno · Área de Difusión Estadística**
 
-Experiencia relacionada con:
+**Periodo:** 2024
 
-- Procesamiento y organización de información estadística.
-- Elaboración de reportes y materiales de difusión.
-- Uso de herramientas informáticas.
-- Actualización y revisión de información estadística.
-- Automatización y optimización de tareas repetitivas.
-- Apoyo en la presentación y difusión de información.
+Experiencia relacionada con el procesamiento, organización y difusión de información estadística, utilizando herramientas informáticas para mejorar la elaboración y presentación de información.
+
+### Actividades desarrolladas
+
+* Procesamiento y organización de información estadística.
+* Verificación y consistencia de registros municipales.
+* Elaboración de reportes y materiales de difusión.
+* Apoyo en la actualización de información estadística.
+* Uso de herramientas informáticas para el procesamiento de datos.
+* Automatización y mejora de tareas repetitivas.
+* Elaboración de gráficos y materiales estadísticos.
 
 ---
 
-## Proyectos
+## 🛠️ Tecnologías y herramientas
 
-### Automatización de reportes estadísticos
+| Tecnología    | Aplicación                         |
+| ------------- | ---------------------------------- |
+| 🐍 Python     | Programación y automatización      |
+| 📊 Pandas     | Procesamiento y análisis de datos  |
+| 📈 R          | Análisis estadístico               |
+| 📊 Power BI   | Visualización de información       |
+| 📉 Matplotlib | Elaboración de gráficos            |
+| 📑 OpenPyXL   | Automatización de archivos Excel   |
+| 🔧 Git        | Control de versiones               |
+| 💻 GitHub     | Gestión y publicación de proyectos |
+| 🌐 HTML       | Estructura de páginas web          |
+| 🎨 CSS        | Diseño y estilos                   |
+| ⚙️ JavaScript | Interactividad y dinamismo         |
 
-Proyecto orientado a automatizar tareas repetitivas relacionadas con la generación de reportes estadísticos mediante Python.
+---
 
-**Tecnologías:**
+## 📁 Proyectos
 
-- Python
-- Pandas
-- OpenPyXL
+### 🐍 Automatización de reportes estadísticos
 
-### Análisis y visualización de datos
+Proyecto orientado a automatizar tareas repetitivas relacionadas con la generación de reportes mediante Python.
+
+**Tecnologías:** Python · Pandas · OpenPyXL
+
+### 📊 Análisis y visualización de datos
 
 Desarrollo de análisis estadísticos y visualizaciones para facilitar la interpretación de información.
 
-**Tecnologías:**
+**Tecnologías:** Python · Pandas · Matplotlib · R · Power BI
 
-- Python
-- Pandas
-- Matplotlib
-- R
-- Power BI
+### 📌 Portafolio profesional
+
+Sitio web personal desarrollado para presentar mi formación académica, experiencia, proyectos, tecnologías e intereses de investigación.
+
+**Tecnologías:** HTML · CSS · JavaScript · GitHub Pages
 
 ---
 
-## Investigación
+## 🔬 Investigación
 
 ### Validación experimental de una estrategia de automatización basada en Python para mejorar la eficiencia y consistencia de la generación de reportes estadísticos
 
-La investigación busca evaluar experimentalmente el efecto de una estrategia de automatización basada en Python sobre:
+**Línea de investigación:** Tecnologías de la información e ingeniería de software.
 
-- El tiempo de generación de reportes.
-- La consistencia de la información.
-- La reducción de tareas repetitivas.
-- La eficiencia del procesamiento estadístico.
+**Sub-línea:** Automatización de procesos y sistemas de información estadística.
 
-**Línea de investigación:**
-
-Tecnologías de la información e ingeniería de software.
-
-**Sub-línea:**
-
-Automatización de procesos y sistemas de información estadística.
+El proyecto busca evaluar experimentalmente el efecto de una estrategia de automatización basada en Python sobre el tiempo de generación y la consistencia de reportes estadísticos.
 
 ---
 
-## Estructura del proyecto
+## 🎯 Áreas de interés
+
+* Análisis de datos.
+* Estadística aplicada.
+* Ciencia de datos.
+* Automatización de procesos.
+* Programación en Python.
+* Visualización de datos.
+* Sistemas de información.
+* Investigación estadística.
+* Desarrollo de soluciones tecnológicas.
+
+---
+
+## 📂 Estructura del proyecto
 
 ```text
-catterin-dev.github.io
-│
-├── assets
-│   └── foto.jpg
-│
-├── css
-│   └── style.css
-│
-├── js
-│   └── script.js
+catterin-dev.github.io/
 │
 ├── index.html
-└── README.md
+├── README.md
+│
+├── css/
+│   └── style.css
+│
+├── js/
+│   └── script.js
+│
+└── assets/
+    └── foto.jpg
+```
+
+---
+
+## ✨ Características del portafolio
+
+* Diseño profesional con tonos morados.
+* Interfaz adaptable a dispositivos móviles.
+* Navegación por secciones.
+* Animaciones y efectos visuales.
+* Texto dinámico.
+* Fondo animado con partículas.
+* Efectos de interacción con el cursor.
+* Sección de formación académica.
+* Sección de experiencia profesional.
+* Presentación de proyectos.
+* Línea de investigación.
+* Información de contacto.
+
+---
+
+## 📬 Contacto
+
+📍 **Ubicación:** Puno, Perú
+
+💼 **LinkedIn:** [linkedin.com/in/catterine-quispe](https://www.linkedin.com/in/catterine-quispe)
+
+💻 **GitHub:** [github.com/catterin-dev](https://github.com/catterin-dev)
+
+---
+
+## 🌐 Publicación
+
+Este portafolio se encuentra publicado mediante **GitHub Pages**.
+
+🔗 [Visitar portafolio](https://catterin-dev.github.io)
+
+---
+
+## 📄 Licencia
+
+Este proyecto corresponde al portafolio personal de Catterine Carely Quispe Quispe.
