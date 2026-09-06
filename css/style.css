@@ -1019,6 +1019,117 @@ footer {
     z-index: 1;
 }
 
+/* =====================================================
+   FOTO PERSONAL
+===================================================== */
 
+.image-circle {
+    overflow: hidden;
+}
+
+.image-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    border-radius: 50%;
+}
+
+/* =====================================================
+   EFECTO DE DESTELLO DEL CURSOR
+===================================================== */
+
+.cursor-spark {
+    position: fixed;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #9b7bea;
+    box-shadow:
+        0 0 8px #9b7bea,
+        0 0 18px #7657d9,
+        0 0 30px rgba(118, 87, 217, 0.7);
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    animation: destello-cursor 0.7s ease-out forwards;
+}
+
+@keyframes destello-cursor {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(4);
+    }
+}
+
+/* Destello cuando el cursor se detiene */
+
+.cursor-glow {
+    position: fixed;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 1px solid rgba(155, 123, 234, 0.45);
+    background: rgba(155, 123, 234, 0.08);
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    animation: brillo-cursor 1s ease-out forwards;
+}
+
+@keyframes brillo-cursor {
+    0% {
+        opacity: 0.8;
+        transform: translate(-50%, -50%) scale(0.5);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(1.8);
+    }
+}
+
+/* =====================================================
+   MEJORAS DE INTERACCIÓN
+===================================================== */
+
+.about-card,
+.timeline-content,
+.experience-card,
+.tecnologias div,
+.projects-section article,
+.research-section article {
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+@media (max-width: 500px) {
+    .image-circle {
+        width: 230px;
+        height: 230px;
+    }
+
+    .image-circle img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .about-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .tecnologias {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
 
 
