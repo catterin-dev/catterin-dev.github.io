@@ -2,6 +2,26 @@
    CATTERINE DEV - PORTAFOLIO
    ===================================================== */
 
+/* ---------- CONFIGURACIÓN GENERAL ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f8f9fc;
+    color: #252238;
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
 
 /* ---------- VARIABLES ---------- */
 
@@ -18,28 +38,9 @@
 }
 
 
-/* ---------- CONFIGURACION GENERAL ---------- */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: var(--very-light);
-    color: var(--dark);
-    line-height: 1.7;
-    overflow-x: hidden;
-}
-
-
-/* ---------- FONDO DE PARTICULAS ---------- */
+/* =====================================================
+   FONDO DE PARTICULAS
+   ===================================================== */
 
 #particle-canvas {
     position: fixed;
@@ -55,7 +56,9 @@ body {
 }
 
 
-/* ---------- NAVEGACION ---------- */
+/* =====================================================
+   NAVEGACIÓN
+   ===================================================== */
 
 header {
     position: fixed;
@@ -75,6 +78,7 @@ header {
 
 nav {
     max-width: 1150px;
+
     margin: auto;
 
     min-height: 75px;
@@ -90,7 +94,6 @@ nav {
     text-decoration: none;
 
     font-size: 1.45rem;
-
     font-weight: 800;
 
     color: var(--dark);
@@ -103,6 +106,7 @@ nav {
 .menu {
     display: flex;
     align-items: center;
+
     gap: 25px;
 }
 
@@ -112,7 +116,6 @@ nav {
     color: var(--gray);
 
     font-size: 0.92rem;
-
     font-weight: 600;
 
     transition: 0.3s ease;
@@ -123,24 +126,9 @@ nav {
 }
 
 
-/* ---------- SECCIONES ---------- */
-
-main,
-footer {
-    position: relative;
-    z-index: 1;
-}
-
-section:not(.hero) {
-    max-width: 1050px;
-
-    margin: auto;
-
-    padding: 100px 25px;
-}
-
-
-/* ---------- HERO ---------- */
+/* =====================================================
+   SECCIÓN PRINCIPAL
+   ===================================================== */
 
 .hero {
     min-height: 100vh;
@@ -191,26 +179,20 @@ section:not(.hero) {
 
 /* ---------- NOMBRE PRINCIPAL ---------- */
 
-.hero h1.nombre-principal {
-    display: block;
-
-    width: 100%;
-
-    margin: 0 0 20px 0;
-
+.nombre-principal {
     font-size: clamp(2.3rem, 4vw, 3.8rem);
 
     line-height: 1.1;
 
-    font-weight: 800;
+    margin-bottom: 20px;
 
     color: var(--dark);
 
-    white-space: normal;
+    font-weight: 800;
 }
 
 
-/* ---------- TITULO ---------- */
+/* ---------- PROFESIÓN ---------- */
 
 .hero h2 {
     font-size: clamp(1.2rem, 3vw, 1.7rem);
@@ -223,7 +205,7 @@ section:not(.hero) {
 }
 
 
-/* ---------- TEXTO DINAMICO ---------- */
+/* ---------- TEXTO DINÁMICO ---------- */
 
 .texto-dinamico {
     margin-top: 12px;
@@ -246,7 +228,7 @@ section:not(.hero) {
 }
 
 
-/* ---------- DESCRIPCION ---------- */
+/* ---------- DESCRIPCIÓN ---------- */
 
 .descripcion {
     max-width: 650px;
@@ -259,70 +241,14 @@ section:not(.hero) {
 }
 
 
-/* ---------- BOTONES ---------- */
-
-.botones {
-    margin-top: 35px;
-
-    display: flex;
-
-    justify-content: flex-start;
-
-    gap: 15px;
-
-    flex-wrap: wrap;
-}
-
-.btn {
-    display: inline-block;
-
-    padding: 13px 25px;
-
-    border-radius: 10px;
-
-    text-decoration: none;
-
-    font-weight: 700;
-
-    transition: 0.3s ease;
-}
-
-.btn.principal {
-    color: var(--white);
-
-    background: var(--primary);
-
-    box-shadow: 0 8px 20px rgba(118, 87, 217, 0.25);
-}
-
-.btn.principal:hover {
-    background: var(--primary-dark);
-
-    transform: translateY(-3px);
-}
-
-.btn.secundario {
-    color: var(--primary);
-
-    background: var(--white);
-
-    border: 1px solid var(--border);
-}
-
-.btn.secundario:hover {
-    border-color: var(--primary);
-
-    transform: translateY(-3px);
-}
-
-
-/* ---------- FOTO ---------- */
+/* =====================================================
+   FOTO
+   ===================================================== */
 
 .hero-image {
     display: flex;
 
     justify-content: center;
-
     align-items: center;
 }
 
@@ -363,21 +289,110 @@ section:not(.hero) {
 }
 
 
-/* ---------- ANIMACION FOTO ---------- */
+/* =====================================================
+   BOTONES
+   ===================================================== */
 
-@keyframes flotar {
-    0%,
-    100% {
-        transform: translateY(0);
-    }
+.botones {
+    margin-top: 35px;
 
-    50% {
-        transform: translateY(-12px);
-    }
+    display: flex;
+
+    justify-content: flex-start;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+
+    padding: 13px 25px;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+
+    font-weight: 700;
+
+    transition: 0.3s ease;
+}
+
+.btn.principal {
+    color: var(--white);
+
+    background: var(--primary);
+
+    box-shadow:
+        0 8px 20px rgba(118, 87, 217, 0.25);
+}
+
+.btn.principal:hover {
+    background: var(--primary-dark);
+
+    transform: translateY(-3px);
+}
+
+.btn.secundario {
+    color: var(--primary);
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+}
+
+.btn.secundario:hover {
+    border-color: var(--primary);
+
+    transform: translateY(-3px);
 }
 
 
-/* ---------- ENCABEZADOS ---------- */
+/* =====================================================
+   SECCIONES
+   ===================================================== */
+
+section:not(.hero) {
+    max-width: 1050px;
+
+    margin: auto;
+
+    padding: 100px 25px;
+
+    position: relative;
+    z-index: 1;
+}
+
+section:not(.hero) > h2 {
+    position: relative;
+
+    margin-bottom: 45px;
+
+    font-size: 2.2rem;
+
+    color: var(--dark);
+}
+
+section:not(.hero) > h2::after {
+    content: "";
+
+    display: block;
+
+    width: 55px;
+    height: 4px;
+
+    margin-top: 10px;
+
+    background: var(--primary);
+
+    border-radius: 10px;
+}
+
+
+/* =====================================================
+   ENCABEZADOS DE SECCIÓN
+   ===================================================== */
 
 .section-header {
     max-width: 700px;
@@ -412,7 +427,9 @@ section:not(.hero) {
 }
 
 
-/* ---------- SOBRE MI ---------- */
+/* =====================================================
+   SOBRE MÍ
+   ===================================================== */
 
 .about-section {
     background: var(--white);
@@ -443,9 +460,6 @@ section:not(.hero) {
 
     font-size: 1rem;
 }
-
-
-/* ---------- ABOUT CARDS ---------- */
 
 .about-cards {
     display: grid;
@@ -497,14 +511,13 @@ section:not(.hero) {
 }
 
 
-/* ---------- FORMACION ---------- */
+/* =====================================================
+   FORMACIÓN
+   ===================================================== */
 
 .education-section {
     background: var(--very-light);
 }
-
-
-/* ---------- TIMELINE ---------- */
 
 .timeline {
     position: relative;
@@ -522,11 +535,9 @@ section:not(.hero) {
     position: absolute;
 
     left: 12px;
-
     top: 0;
 
     width: 2px;
-
     height: 100%;
 
     background: var(--secondary);
@@ -542,7 +553,6 @@ section:not(.hero) {
     position: absolute;
 
     left: -35px;
-
     top: 0;
 
     width: 28px;
@@ -601,9 +611,6 @@ section:not(.hero) {
     color: var(--gray);
 }
 
-
-/* ---------- EDUCATION TAGS ---------- */
-
 .education-tags {
     display: flex;
 
@@ -629,7 +636,9 @@ section:not(.hero) {
 }
 
 
-/* ---------- EXPERIENCIA ---------- */
+/* =====================================================
+   EXPERIENCIA PROFESIONAL
+   ===================================================== */
 
 .experience-section {
     background: var(--white);
@@ -651,11 +660,9 @@ section:not(.hero) {
     position: absolute;
 
     left: 15px;
-
     top: 10px;
 
     width: 2px;
-
     height: calc(100% - 20px);
 
     background: linear-gradient(
@@ -673,7 +680,6 @@ section:not(.hero) {
     position: absolute;
 
     left: -45px;
-
     top: 20px;
 
     width: 34px;
@@ -861,7 +867,9 @@ section:not(.hero) {
 }
 
 
-/* ---------- TECNOLOGIAS ---------- */
+/* =====================================================
+   TECNOLOGÍAS
+   ===================================================== */
 
 .technologies-section {
     background: var(--very-light);
@@ -900,10 +908,16 @@ section:not(.hero) {
 }
 
 
-/* ---------- PROYECTOS ---------- */
+/* =====================================================
+   PROYECTOS E INVESTIGACIÓN
+   ===================================================== */
 
 .projects-section {
     background: var(--white);
+}
+
+.research-section {
+    background: var(--very-light);
 }
 
 article {
@@ -938,41 +952,16 @@ article h3 {
     font-size: 1.25rem;
 }
 
-article h4 {
-    margin-bottom: 18px;
-
-    color: var(--primary);
-}
-
 article p {
     color: var(--gray);
 }
 
-.projects-section article {
-    position: relative;
-
-    overflow: hidden;
+article p + p {
+    margin-top: 15px;
 }
 
-.projects-section article::before {
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-    left: 0;
-
-    width: 5px;
-    height: 100%;
-
-    background: var(--primary);
-}
-
-
-/* ---------- INVESTIGACION ---------- */
-
-.research-section {
-    background: var(--very-light);
+article strong {
+    color: var(--dark);
 }
 
 .research-section article h3 {
@@ -981,17 +970,20 @@ article p {
     line-height: 1.5;
 }
 
-.research-section article p {
-    margin-top: 15px;
-}
 
-
-/* ---------- CONTACTO ---------- */
+/* =====================================================
+   CONTACTO
+   ===================================================== */
 
 .contact-section {
     text-align: center;
 
     background: var(--white);
+}
+
+.contact-section .section-header {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .contact-section p {
@@ -1001,9 +993,14 @@ article p {
 }
 
 
-/* ---------- FOOTER ---------- */
+/* =====================================================
+   FOOTER
+   ===================================================== */
 
 footer {
+    position: relative;
+    z-index: 1;
+
     padding: 35px 20px;
 
     text-align: center;
@@ -1022,19 +1019,30 @@ footer p:last-child {
 }
 
 
-/* ---------- ANIMACIONES ---------- */
+/* =====================================================
+   ANIMACIONES
+   ===================================================== */
 
 @keyframes aparecer {
     from {
         opacity: 0;
-
         transform: translateY(25px);
     }
 
     to {
         opacity: 1;
-
         transform: translateY(0);
+    }
+}
+
+@keyframes flotar {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
     }
 }
 
@@ -1065,7 +1073,7 @@ footer p:last-child {
         font-size: 0.8rem;
     }
 
-    .hero h1.nombre-principal {
+    .nombre-principal {
         font-size: 3.2rem;
     }
 
@@ -1076,7 +1084,6 @@ footer p:last-child {
 
     .about-grid {
         grid-template-columns: 1fr;
-
         gap: 35px;
     }
 
@@ -1124,7 +1131,6 @@ footer p:last-child {
 
     .experience-top {
         flex-direction: column;
-
         gap: 12px;
     }
 
@@ -1161,7 +1167,7 @@ footer p:last-child {
         padding-top: 70px;
     }
 
-    .hero h1.nombre-principal {
+    .nombre-principal {
         font-size: 2.3rem;
     }
 
@@ -1171,6 +1177,10 @@ footer p:last-child {
 
     section:not(.hero) {
         padding: 70px 20px;
+    }
+
+    section:not(.hero) > h2 {
+        font-size: 1.9rem;
     }
 
     .hero-container {
