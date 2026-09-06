@@ -5,26 +5,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Br. Catterine Carely Quispe Quispe</title>
+    <title>Catterine Carely Quispe | Estadística & Datos</title>
 
     <meta name="description"
-        content="Portafolio profesional de Catterine Carely Quispe Quispe - Ingeniería Estadística e Informática, análisis de datos, Python y automatización.">
+        content="Portafolio profesional de Catterine Carely Quispe, Bachiller en Ingeniería Estadística e Informática.">
 
     <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    <canvas id="particle-canvas"></canvas>    
-    <!-- ================= NAVEGACIÓN ================= -->
 
-    <header>
-        <nav>
+    <div class="background-grid"></div>
+
+    <!-- NAVEGACIÓN -->
+    <header class="header">
+
+        <nav class="nav container">
 
             <a href="#inicio" class="logo">
                 catterin<span>-dev</span>
             </a>
 
-            <div class="menu">
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+                ☰
+            </button>
+
+            <div class="nav-menu" id="nav-menu">
+
                 <a href="#inicio">Inicio</a>
                 <a href="#sobre-mi">Sobre mí</a>
                 <a href="#formacion">Formación</a>
@@ -33,61 +47,94 @@
                 <a href="#proyectos">Proyectos</a>
                 <a href="#investigacion">Investigación</a>
                 <a href="#contacto">Contacto</a>
+
             </div>
 
         </nav>
+
     </header>
 
 
     <main>
 
-        <!-- ================= INICIO ================= -->
-
+        <!-- HERO -->
         <section id="inicio" class="hero">
 
-            <div class="hero-container">
+            <div class="container hero-content">
 
                 <div class="hero-text">
-                    <h1 class="nombre-principal">
-                        Br. Catterine Carely Quispe Quispe
+
+                    <span class="eyebrow">
+                        ✦ ESTADÍSTICA · TECNOLOGÍA · DATOS
+                    </span>
+
+                    <h1>
+                        Hola, soy
+                        <span>Catterine</span>
                     </h1>
 
                     <h2>
                         Ingeniería Estadística e Informática
                     </h2>
 
-                    <p class="texto-dinamico">
-                        <span id="texto-dinamico"></span>
-                        <span class="cursor">|</span>
-                    </p>
-
-                    <p class="descripcion">
-                        Transformando datos en información y procesos
-                        en soluciones tecnológicas mediante estadística,
+                    <p class="hero-description">
+                        Transformo datos en información útil y desarrollo
+                        soluciones tecnológicas mediante estadística,
                         programación y automatización.
                     </p>
 
-                    <div class="botones">
+                    <div class="hero-buttons">
 
-                        <a href="#proyectos" class="btn principal">
-                            Ver proyectos
+                        <a href="#proyectos" class="btn btn-primary">
+                            Ver proyectos <span>↗</span>
                         </a>
 
-                        <a href="#contacto" class="btn secundario">
+                        <a href="#contacto" class="btn btn-outline">
                             Contactarme
                         </a>
+
+                    </div>
+
+                    <div class="hero-stats">
+
+                        <div>
+                            <strong>01</strong>
+                            <span>Estadística</span>
+                        </div>
+
+                        <div>
+                            <strong>02</strong>
+                            <span>Programación</span>
+                        </div>
+
+                        <div>
+                            <strong>03</strong>
+                            <span>Investigación</span>
+                        </div>
 
                     </div>
 
                 </div>
 
 
-                <div class="hero-image">
+                <div class="hero-visual">
 
-                    <div class="image-circle">
+                    <div class="profile-wrapper">
 
-                        <div class="image-placeholder">
-                            👩‍💻
+                        <div class="profile-glow"></div>
+
+                        <div class="profile-image">
+
+                            <!-- COLOCA AQUÍ TU FOTO -->
+                            <img src="img/perfil.jpg"
+                                alt="Fotografía de Catterine Carely Quispe">
+
+                        </div>
+
+                        <div class="profile-badge">
+                            <span>✦</span>
+                            Datos que generan
+                            <strong>soluciones</strong>
                         </div>
 
                     </div>
@@ -99,111 +146,79 @@
         </section>
 
 
-        <!-- ================= SOBRE MÍ ================= -->
+        <!-- SOBRE MÍ -->
+        <section id="sobre-mi" class="section">
 
-        <section id="sobre-mi" class="about-section">
+            <div class="container">
 
-            <div class="section-header">
+                <div class="section-heading">
 
-                <p class="section-tag">
-                    PERFIL PROFESIONAL
-                </p>
+                    <span class="section-number">01 / PERFIL</span>
 
-                <h2>Sobre mí</h2>
-
-                <p>
-                    Una combinación entre estadística, tecnología y
-                    análisis de datos.
-                </p>
-
-            </div>
-
-
-            <div class="about-grid">
-
-                <div class="about-content">
-
-                    <h3>
-                        Estadística + Tecnología + Datos
-                    </h3>
+                    <h2>
+                        Estadística con
+                        <span>propósito.</span>
+                    </h2>
 
                     <p>
-                        Soy Bachiller en Ingeniería Estadística e Informática,
-                        interesada en el análisis de datos, programación,
-                        automatización de procesos y desarrollo de soluciones
-                        orientadas al procesamiento de información estadística.
-                    </p>
-
-                    <p>
-                        Mi formación integra conocimientos de estadística,
-                        informática y tecnologías de información, con especial
-                        interés en Python, análisis de datos, visualización y
-                        generación automatizada de reportes.
-                    </p>
-
-                    <p>
-                        Actualmente continúo fortaleciendo mis conocimientos
-                        en programación, ciencia de datos, automatización
-                        y tecnologías de información.
+                        Una combinación entre análisis, tecnología
+                        y creatividad para resolver problemas reales.
                     </p>
 
                 </div>
 
 
-                <div class="about-cards">
+                <div class="about-layout">
 
-                    <div class="about-card">
-
-                        <span class="about-icon">📊</span>
-
-                        <h4>Análisis de Datos</h4>
+                    <div class="about-text">
 
                         <p>
-                            Transformación e interpretación
-                            de información.
+                            Soy Bachiller en Ingeniería Estadística e Informática,
+                            interesada en el análisis de datos, la programación
+                            y el desarrollo de soluciones tecnológicas.
+                        </p>
+
+                        <p>
+                            Mi formación integra conocimientos de estadística,
+                            informática y tecnologías de información, con especial
+                            interés en Python, visualización de datos,
+                            automatización y generación de reportes.
+                        </p>
+
+                        <p>
+                            Actualmente continúo fortaleciendo mis conocimientos
+                            en ciencia de datos, programación e investigación
+                            aplicada.
                         </p>
 
                     </div>
 
 
-                    <div class="about-card">
+                    <div class="about-cards">
 
-                        <span class="about-icon">🐍</span>
+                        <div class="info-card">
+                            <span>📊</span>
+                            <h3>Análisis de datos</h3>
+                            <p>Transformación e interpretación de información.</p>
+                        </div>
 
-                        <h4>Python</h4>
+                        <div class="info-card">
+                            <span>🐍</span>
+                            <h3>Python</h3>
+                            <p>Programación y automatización de procesos.</p>
+                        </div>
 
-                        <p>
-                            Programación y automatización
-                            de procesos.
-                        </p>
+                        <div class="info-card">
+                            <span>⚙️</span>
+                            <h3>Automatización</h3>
+                            <p>Optimización de tareas repetitivas.</p>
+                        </div>
 
-                    </div>
-
-
-                    <div class="about-card">
-
-                        <span class="about-icon">🤖</span>
-
-                        <h4>Automatización</h4>
-
-                        <p>
-                            Optimización de tareas
-                            repetitivas.
-                        </p>
-
-                    </div>
-
-
-                    <div class="about-card">
-
-                        <span class="about-icon">🔬</span>
-
-                        <h4>Investigación</h4>
-
-                        <p>
-                            Aplicación de tecnología
-                            a problemas estadísticos.
-                        </p>
+                        <div class="info-card">
+                            <span>🔬</span>
+                            <h3>Investigación</h3>
+                            <p>Aplicación de tecnología a problemas estadísticos.</p>
+                        </div>
 
                     </div>
 
@@ -214,38 +229,35 @@
         </section>
 
 
-        <!-- ================= FORMACIÓN ================= -->
+        <!-- FORMACIÓN -->
+        <section id="formacion" class="section section-dark">
 
-        <section id="formacion" class="education-section">
+            <div class="container">
 
-            <div class="section-header">
+                <div class="section-heading">
 
-                <p class="section-tag">
-                    FORMACIÓN ACADÉMICA
-                </p>
+                    <span class="section-number">02 / FORMACIÓN</span>
 
-                <h2>Educación</h2>
+                    <h2>
+                        Mi <span>formación.</span>
+                    </h2>
 
-                <p>
-                    Formación orientada a la estadística,
-                    informática y análisis de datos.
-                </p>
+                    <p>
+                        Una preparación orientada a la estadística,
+                        informática y análisis de datos.
+                    </p>
 
-            </div>
+                </div>
 
 
-            <div class="timeline">
+                <div class="education-card">
 
-                <div class="timeline-item">
+                    <div class="education-icon">🎓</div>
 
-                    <div class="timeline-dot">
-                        🎓
-                    </div>
+                    <div>
 
-                    <div class="timeline-content">
-
-                        <span class="timeline-year">
-                            Universidad Nacional del Altiplano
+                        <span class="card-label">
+                            UNIVERSIDAD NACIONAL DEL ALTIPLANO
                         </span>
 
                         <h3>
@@ -256,7 +268,7 @@
                             Bachiller en Ingeniería Estadística e Informática.
                         </p>
 
-                        <div class="education-tags">
+                        <div class="tags">
 
                             <span>Estadística</span>
                             <span>Programación</span>
@@ -274,168 +286,106 @@
         </section>
 
 
-        <!-- ================= EXPERIENCIA ================= -->
+        <!-- EXPERIENCIA -->
+        <section id="experiencia" class="section">
 
-        <section id="experiencia" class="experience-section">
+            <div class="container">
 
-            <div class="section-header">
+                <div class="section-heading">
 
-                <p class="section-tag">
-                    EXPERIENCIA PROFESIONAL
-                </p>
+                    <span class="section-number">03 / EXPERIENCIA</span>
 
-                <h2>
-                    Mi experiencia
-                </h2>
+                    <h2>
+                        Experiencia que
+                        <span>conecta datos.</span>
+                    </h2>
 
-                <p>
-                    Experiencia aplicada al procesamiento, análisis y
-                    difusión de información estadística.
-                </p>
+                    <p>
+                        Aplicación de conocimientos estadísticos
+                        e informáticos en el ámbito profesional.
+                    </p>
 
-            </div>
+                </div>
 
 
-            <div class="experience-timeline">
+                <div class="experience-card">
 
-                <div class="experience-item">
+                    <div class="experience-header">
 
-                    <div class="experience-marker">
-                        💼
+                        <div>
+
+                            <span class="card-label">
+                                2024 · EXPERIENCIA PROFESIONAL
+                            </span>
+
+                            <h3>
+                                Instituto Nacional de Estadística
+                                e Informática – INEI
+                            </h3>
+
+                            <p class="experience-place">
+                                ODEI Puno · Área de Difusión Estadística
+                            </p>
+
+                        </div>
+
+                        <span class="experience-icon">💼</span>
+
                     </div>
 
 
-                    <div class="experience-card">
+                    <p class="experience-description">
+                        Experiencia relacionada con el procesamiento,
+                        organización y difusión de información estadística,
+                        utilizando herramientas informáticas para mejorar
+                        la elaboración y presentación de información.
+                    </p>
 
-                        <div class="experience-top">
 
+                    <div class="experience-grid">
+
+                        <div class="experience-item">
+                            <span>📊</span>
                             <div>
-
-                                <span class="experience-date">
-                                    2024
-                                </span>
-
-                                <h3>
-                                    Instituto Nacional de Estadística
-                                    e Informática – INEI
-                                </h3>
-
-                                <h4>
-                                    ODEI Puno · Área de Difusión Estadística
-                                </h4>
-
+                                <h4>Información estadística</h4>
+                                <p>Procesamiento y organización de información.</p>
                             </div>
-
-                            <span class="experience-type">
-                                Experiencia profesional
-                            </span>
-
                         </div>
 
-
-                        <p class="experience-description">
-
-                            Experiencia relacionada con el procesamiento,
-                            organización y difusión de información estadística,
-                            utilizando herramientas informáticas para mejorar
-                            la elaboración y presentación de información.
-
-                        </p>
-
-
-                        <div class="experience-grid">
-
-                            <div class="experience-feature">
-
-                                <span>📊</span>
-
-                                <div>
-
-                                    <strong>
-                                        Información estadística
-                                    </strong>
-
-                                    <p>
-                                        Procesamiento y organización
-                                        de información.
-                                    </p>
-
-                                </div>
-
+                        <div class="experience-item">
+                            <span>📑</span>
+                            <div>
+                                <h4>Reportes</h4>
+                                <p>Elaboración de reportes y materiales de difusión.</p>
                             </div>
-
-
-                            <div class="experience-feature">
-
-                                <span>📑</span>
-
-                                <div>
-
-                                    <strong>
-                                        Reportes
-                                    </strong>
-
-                                    <p>
-                                        Elaboración de reportes y
-                                        materiales de difusión.
-                                    </p>
-
-                                </div>
-
-                            </div>
-
-
-                            <div class="experience-feature">
-
-                                <span>💻</span>
-
-                                <div>
-
-                                    <strong>
-                                        Herramientas tecnológicas
-                                    </strong>
-
-                                    <p>
-                                        Uso de herramientas para
-                                        procesamiento de datos.
-                                    </p>
-
-                                </div>
-
-                            </div>
-
-
-                            <div class="experience-feature">
-
-                                <span>⚙️</span>
-
-                                <div>
-
-                                    <strong>
-                                        Optimización
-                                    </strong>
-
-                                    <p>
-                                        Automatización y mejora
-                                        de tareas repetitivas.
-                                    </p>
-
-                                </div>
-
-                            </div>
-
                         </div>
 
-
-                        <div class="experience-tags">
-
-                            <span>Estadística</span>
-                            <span>Procesamiento de datos</span>
-                            <span>Reportes</span>
-                            <span>Difusión estadística</span>
-                            <span>Automatización</span>
-
+                        <div class="experience-item">
+                            <span>💻</span>
+                            <div>
+                                <h4>Herramientas tecnológicas</h4>
+                                <p>Uso de herramientas para procesamiento de datos.</p>
+                            </div>
                         </div>
+
+                        <div class="experience-item">
+                            <span>⚙️</span>
+                            <div>
+                                <h4>Optimización</h4>
+                                <p>Automatización y mejora de tareas repetitivas.</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="tags">
+
+                        <span>Estadística</span>
+                        <span>Procesamiento de datos</span>
+                        <span>Reportes</span>
+                        <span>Difusión estadística</span>
+                        <span>Automatización</span>
 
                     </div>
 
@@ -446,199 +396,334 @@
         </section>
 
 
-        <!-- ================= TECNOLOGÍAS ================= -->
+        <!-- TECNOLOGÍAS -->
+        <section id="tecnologias" class="section section-dark">
 
-        <section id="tecnologias" class="technologies-section">
+            <div class="container">
 
-            <div class="section-header">
+                <div class="section-heading">
 
-                <p class="section-tag">
-                    HERRAMIENTAS
-                </p>
+                    <span class="section-number">04 / HERRAMIENTAS</span>
 
-                <h2>Tecnologías y herramientas</h2>
+                    <h2>
+                        Tecnologías que
+                        <span>utilizo.</span>
+                    </h2>
 
-                <p>
-                    Tecnologías que utilizo para analizar datos
-                    y desarrollar soluciones.
-                </p>
+                    <p>
+                        Herramientas para analizar datos,
+                        programar y desarrollar soluciones.
+                    </p>
 
-            </div>
+                </div>
 
 
-            <div class="tecnologias">
+                <div class="tech-grid">
 
-                <div>🐍 Python</div>
-                <div>📊 Pandas</div>
-                <div>📈 R</div>
-                <div>📊 Power BI</div>
-                <div>📉 Matplotlib</div>
-                <div>🔧 Git</div>
-                <div>💻 GitHub</div>
+                    <div class="tech-card">
+                        <span>🐍</span>
+                        <h3>Python</h3>
+                        <p>Programación y análisis</p>
+                    </div>
+
+                    <div class="tech-card">
+                        <span>📊</span>
+                        <h3>Pandas</h3>
+                        <p>Manipulación de datos</p>
+                    </div>
+
+                    <div class="tech-card">
+                        <span>📈</span>
+                        <h3>R</h3>
+                        <p>Análisis estadístico</p>
+                    </div>
+
+                    <div class="tech-card">
+                        <span>📊</span>
+                        <h3>Power BI</h3>
+                        <p>Visualización de datos</p>
+                    </div>
+
+                    <div class="tech-card">
+                        <span>📉</span>
+                        <h3>Matplotlib</h3>
+                        <p>Gráficos estadísticos</p>
+                    </div>
+
+                    <div class="tech-card">
+                        <span>🔧</span>
+                        <h3>Git</h3>
+                        <p>Control de versiones</p>
+                    </div>
+
+                    <div class="tech-card">
+                        <span>💻</span>
+                        <h3>GitHub</h3>
+                        <p>Proyectos y colaboración</p>
+                    </div>
+
+                    <div class="tech-card">
+                        <span>🌐</span>
+                        <h3>HTML · CSS · JS</h3>
+                        <p>Desarrollo web</p>
+                    </div>
+
+                </div>
 
             </div>
 
         </section>
 
 
-        <!-- ================= PROYECTOS ================= -->
+        <!-- PROYECTOS -->
+        <section id="proyectos" class="section">
 
-        <section id="proyectos" class="projects-section">
+            <div class="container">
 
-            <div class="section-header">
+                <div class="section-heading">
 
-                <p class="section-tag">
-                    TRABAJO DESTACADO
-                </p>
+                    <span class="section-number">05 / PROYECTOS</span>
 
-                <h2>Proyectos</h2>
+                    <h2>
+                        Proyectos con
+                        <span>impacto.</span>
+                    </h2>
 
-                <p>
-                    Soluciones desarrolladas mediante estadística,
-                    programación y automatización.
-                </p>
+                    <p>
+                        Soluciones desarrolladas mediante estadística,
+                        programación y automatización.
+                    </p>
+
+                </div>
+
+
+                <div class="projects-grid">
+
+                    <article class="project-card">
+
+                        <div class="project-number">01</div>
+
+                        <div class="project-icon">🐍</div>
+
+                        <h3>
+                            Automatización de reportes estadísticos
+                        </h3>
+
+                        <p>
+                            Proyecto orientado a automatizar tareas repetitivas
+                            relacionadas con la generación de reportes mediante Python.
+                        </p>
+
+                        <div class="tags">
+                            <span>Python</span>
+                            <span>Pandas</span>
+                            <span>OpenPyXL</span>
+                        </div>
+
+                        <a href="#" class="project-link">
+                            Ver proyecto <span>↗</span>
+                        </a>
+
+                    </article>
+
+
+                    <article class="project-card">
+
+                        <div class="project-number">02</div>
+
+                        <div class="project-icon">📊</div>
+
+                        <h3>
+                            Análisis y visualización de datos
+                        </h3>
+
+                        <p>
+                            Desarrollo de análisis estadísticos y visualizaciones
+                            para facilitar la interpretación de información.
+                        </p>
+
+                        <div class="tags">
+                            <span>Python</span>
+                            <span>R</span>
+                            <span>Power BI</span>
+                        </div>
+
+                        <a href="#" class="project-link">
+                            Ver proyecto <span>↗</span>
+                        </a>
+
+                    </article>
+
+
+                    <article class="project-card">
+
+                        <div class="project-number">03</div>
+
+                        <div class="project-icon">🔬</div>
+
+                        <h3>
+                            Investigación estadística
+                        </h3>
+
+                        <p>
+                            Aplicación de métodos estadísticos y herramientas
+                            tecnológicas para el estudio de problemas reales.
+                        </p>
+
+                        <div class="tags">
+                            <span>Estadística</span>
+                            <span>Investigación</span>
+                            <span>Datos</span>
+                        </div>
+
+                        <a href="#investigacion" class="project-link">
+                            Ver investigación <span>↗</span>
+                        </a>
+
+                    </article>
+
+                </div>
 
             </div>
-
-
-            <article>
-
-                <h3>
-                    🐍 Automatización de reportes estadísticos
-                </h3>
-
-                <p>
-                    Proyecto orientado a automatizar tareas repetitivas
-                    relacionadas con la generación de reportes mediante
-                    Python.
-                </p>
-
-                <p>
-                    <strong>Tecnologías:</strong>
-                    Python · Pandas · OpenPyXL
-                </p>
-
-            </article>
-
-
-            <article>
-
-                <h3>
-                    📊 Análisis y visualización de datos
-                </h3>
-
-                <p>
-                    Desarrollo de análisis estadísticos y visualizaciones
-                    para facilitar la interpretación de información.
-                </p>
-
-                <p>
-                    <strong>Tecnologías:</strong>
-                    Python · Pandas · Matplotlib · R · Power BI
-                </p>
-
-            </article>
 
         </section>
 
 
-        <!-- ================= INVESTIGACIÓN ================= -->
+        <!-- INVESTIGACIÓN -->
+        <section id="investigacion" class="section section-dark">
 
-        <section id="investigacion" class="research-section">
+            <div class="container">
 
-            <div class="section-header">
+                <div class="section-heading">
 
-                <p class="section-tag">
-                    LÍNEA DE INVESTIGACIÓN
-                </p>
+                    <span class="section-number">06 / INVESTIGACIÓN</span>
 
-                <h2>Investigación</h2>
+                    <h2>
+                        Investigación
+                        <span>aplicada.</span>
+                    </h2>
 
-                <p>
-                    Aplicación de la estadística y la tecnología
-                    para resolver problemas reales.
-                </p>
+                    <p>
+                        Estadística y tecnología para resolver
+                        problemas reales.
+                    </p>
+
+                </div>
+
+
+                <div class="research-card">
+
+                    <span class="card-label">
+                        LÍNEA DE INVESTIGACIÓN
+                    </span>
+
+                    <h3>
+                        Validación experimental de una estrategia
+                        de automatización basada en Python para
+                        mejorar la eficiencia y consistencia de
+                        la generación de reportes estadísticos
+                    </h3>
+
+                    <div class="research-details">
+
+                        <div>
+                            <strong>Línea</strong>
+                            <p>
+                                Tecnologías de la información
+                                e ingeniería de software.
+                            </p>
+                        </div>
+
+                        <div>
+                            <strong>Sub-línea</strong>
+                            <p>
+                                Automatización de procesos y sistemas
+                                de información estadística.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <p>
+                        El proyecto busca evaluar experimentalmente
+                        el efecto de una estrategia de automatización
+                        basada en Python sobre el tiempo de generación
+                        y la consistencia de reportes estadísticos.
+                    </p>
+
+                </div>
 
             </div>
-
-
-            <article>
-
-                <h3>
-                    Validación experimental de una estrategia de
-                    automatización basada en Python para mejorar
-                    la eficiencia y consistencia de la generación
-                    de reportes estadísticos
-                </h3>
-
-                <p>
-                    <strong>Línea:</strong>
-                    Tecnologías de la información e ingeniería de software.
-                </p>
-
-                <p>
-                    <strong>Sub-línea:</strong>
-                    Automatización de procesos y sistemas de
-                    información estadística.
-                </p>
-
-                <p>
-                    El proyecto busca evaluar experimentalmente
-                    el efecto de una estrategia de automatización
-                    basada en Python sobre el tiempo de generación
-                    y la consistencia de reportes estadísticos.
-                </p>
-
-            </article>
 
         </section>
 
 
-        <!-- ================= CONTACTO ================= -->
+        <!-- CONTACTO -->
+        <section id="contacto" class="section contact-section">
 
-        <section id="contacto" class="contact-section">
+            <div class="container">
 
-            <div class="section-header">
+                <div class="section-heading">
 
-                <p class="section-tag">
-                    CONVERSEMOS
-                </p>
+                    <span class="section-number">07 / CONTACTO</span>
 
-                <h2>Contacto</h2>
+                    <h2>
+                        ¿Hablamos de
+                        <span>datos?</span>
+                    </h2>
 
-                <p>
-                    Estoy interesada en proyectos relacionados con
-                    estadística, análisis de datos y tecnología.
-                </p>
+                    <p>
+                        Estoy interesada en proyectos relacionados
+                        con estadística, análisis de datos y tecnología.
+                    </p>
 
-            </div>
+                </div>
 
-            <p>📍 Puno, Perú</p>
 
-            <p>
-                💼 LinkedIn:
-                <a href="https://www.linkedin.com/in/catterine-quispe"
-                    target="_blank">
-                    linkedin.com/in/catterine-quispe
+                <div class="contact-links">
+
+                    <a href="mailto:tu-correo@ejemplo.com">
+                        ✉️ tu-correo@ejemplo.com
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/catterine-quispe"
+                        target="_blank" rel="noopener noreferrer">
+                        💼 LinkedIn
+                    </a>
+
+                    <a href="https://github.com/catterin-dev"
+                        target="_blank" rel="noopener noreferrer">
+                        💻 GitHub
+                    </a>
+
+                </div>
+
+                <a href="cv/CV-Catterine-Quispe.pdf"
+                    class="btn btn-primary">
+                    Descargar CV ↓
                 </a>
-            </p>
+
+            </div>
 
         </section>
 
     </main>
 
 
-    <!-- ================= FOOTER ================= -->
+    <!-- FOOTER -->
+    <footer class="footer">
 
-    <footer>
+        <div class="container">
 
-        <p>
-            © 2026 Catterine Carely Quispe Quispe
-        </p>
+            <p>
+                © 2026 Catterine Carely Quispe Quispe
+            </p>
 
-        <p>
-            Estadística + Tecnología + Datos = Soluciones
-        </p>
+            <p>
+                Estadística + Tecnología + Datos = Soluciones
+            </p>
+
+        </div>
 
     </footer>
 
@@ -648,8 +733,3 @@
 </body>
 
 </html>
-
-
-
-
-
