@@ -2,94 +2,96 @@
    CATTERINE DEV - JAVASCRIPT
    ===================================================== */
 
-document.addEventListener("DOMContentLoaded", function () {
 
-    /* =====================================================
-       TEXTO DINAMICO
-       ===================================================== */
+/* =====================================================
+   TEXTO DINAMICO
+   ===================================================== */
 
-    const textoDinamico = document.getElementById("texto-dinamico");
+const textoDinamico = document.getElementById("texto-dinamico");
 
-    const textos = [
-        "Análisis de datos",
-        "Programación en Python",
-        "Automatización de procesos",
-        "Visualización estadística",
-        "Ciencia de datos"
-    ];
+const textos = [
+    "Análisis de datos",
+    "Programación en Python",
+    "Automatización de procesos",
+    "Visualización estadística",
+    "Ciencia de datos"
+];
 
-    let indiceTexto = 0;
-    let indiceLetra = 0;
-    let borrando = false;
+let indiceTexto = 0;
+let indiceLetra = 0;
+let borrando = false;
 
-    function escribirTexto() {
+function escribirTexto() {
 
-        if (!textoDinamico) return;
+    if (!textoDinamico) return;
 
-        const textoActual = textos[indiceTexto];
+    const textoActual = textos[indiceTexto];
 
-        if (!borrando) {
+    if (!borrando) {
 
-            textoDinamico.textContent =
-                textoActual.substring(0, indiceLetra + 1);
+        textoDinamico.textContent =
+            textoActual.substring(0, indiceLetra + 1);
 
-            indiceLetra++;
+        indiceLetra++;
 
-            if (indiceLetra === textoActual.length) {
+        if (indiceLetra === textoActual.length) {
 
-                borrando = true;
+            borrando = true;
 
-                setTimeout(escribirTexto, 1800);
+            setTimeout(escribirTexto, 1800);
 
-                return;
-            }
+            return;
 
-        } else {
+        }
 
-            textoDinamico.textContent =
-                textoActual.substring(0, indiceLetra - 1);
+    } else {
 
-            indiceLetra--;
+        textoDinamico.textContent =
+            textoActual.substring(0, indiceLetra - 1);
 
-            if (indiceLetra === 0) {
+        indiceLetra--;
 
-                borrando = false;
+        if (indiceLetra === 0) {
 
-                indiceTexto++;
+            borrando = false;
 
-                if (indiceTexto === textos.length) {
-                    indiceTexto = 0;
-                }
+            indiceTexto++;
+
+            if (indiceTexto === textos.length) {
+
+                indiceTexto = 0;
 
             }
 
         }
 
-        setTimeout(escribirTexto, borrando ? 45 : 90);
-
     }
 
-    escribirTexto();
+    setTimeout(escribirTexto, borrando ? 45 : 90);
+
+}
+
+escribirTexto();
 
 
-    /* =====================================================
-       PARTICULAS MORADAS
-       ===================================================== */
 
-    const canvas = document.getElementById("particle-canvas");
+/* =====================================================
+   PARTICULAS MORADAS
+   ===================================================== */
 
-    if (!canvas) {
-        console.error("No se encontró el canvas de partículas.");
-        return;
-    }
+const canvas = document.getElementById("particle-canvas");
+
+if (canvas) {
 
     const ctx = canvas.getContext("2d");
 
     let particles = [];
 
     let mouse = {
+
         x: null,
         y: null
+
     };
 
 
@@ -100,6 +102,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function resizeCanvas() {
 
         canvas.width = window.innerWidth;
+
         canvas.height = window.innerHeight;
 
         createParticles();
@@ -111,6 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("resize", resizeCanvas);
 
 
+
     /* =====================================================
        CURSOR
        ===================================================== */
@@ -118,16 +122,20 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("mousemove", function (event) {
 
         mouse.x = event.clientX;
+
         mouse.y = event.clientY;
 
     });
 
+
     window.addEventListener("mouseleave", function () {
 
         mouse.x = null;
+
         mouse.y = null;
 
     });
+
 
 
     /* =====================================================
@@ -139,29 +147,38 @@ document.addEventListener("DOMContentLoaded", function () {
         constructor() {
 
             this.x = Math.random() * canvas.width;
+
             this.y = Math.random() * canvas.height;
 
             this.size = Math.random() * 2.5 + 1;
 
-            this.speedX = Math.random() * 0.4 - 0.2;
-            this.speedY = Math.random() * 0.4 - 0.2;
+            this.speedX = Math.random() * 0.5 - 0.25;
+
+            this.speedY = Math.random() * 0.5 - 0.25;
 
         }
 
 
         update() {
 
-            /* MOVIMIENTO LENTO */
+            /*
+               MOVIMIENTO LENTO
+            */
 
             this.x += this.speedX;
+
             this.y += this.speedY;
 
 
-            /* REACCION AL CURSOR */
+
+            /*
+               REACCION AL CURSOR
+            */
 
             if (mouse.x !== null && mouse.y !== null) {
 
                 const dx = this.x - mouse.x;
+
                 const dy = this.y - mouse.y;
 
                 const distance = Math.sqrt(
@@ -175,30 +192,44 @@ document.addEventListener("DOMContentLoaded", function () {
                     const fuerza =
                         (radius - distance) / radius;
 
-                    this.x += (dx / distance) * fuerza * 2.5;
-                    this.y += (dy / distance) * fuerza * 2.5;
+                    this.x +=
+                        (dx / distance) * fuerza * 2;
+
+                    this.y +=
+                        (dy / distance) * fuerza * 2;
 
                 }
 
             }
 
 
-            /* REAPARECER POR EL OTRO LADO */
+
+            /*
+               REAPARECER POR EL OTRO LADO
+            */
 
             if (this.x < 0) {
+
                 this.x = canvas.width;
+
             }
 
             if (this.x > canvas.width) {
+
                 this.x = 0;
+
             }
 
             if (this.y < 0) {
+
                 this.y = canvas.height;
+
             }
 
             if (this.y > canvas.height) {
+
                 this.y = 0;
+
             }
 
         }
@@ -209,11 +240,13 @@ document.addEventListener("DOMContentLoaded", function () {
             ctx.beginPath();
 
             ctx.arc(
+
                 this.x,
                 this.y,
                 this.size,
                 0,
                 Math.PI * 2
+
             );
 
             ctx.fillStyle =
@@ -229,6 +262,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
     }
+
 
 
     /* =====================================================
@@ -262,6 +296,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
+
     /* =====================================================
        CONECTAR PARTICULAS
        ===================================================== */
@@ -270,7 +305,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
         for (let a = 0; a < particles.length; a++) {
 
-            for (let b = a + 1; b < particles.length; b++) {
+            for (
+                let b = a + 1;
+                b < particles.length;
+                b++
+            ) {
 
                 const dx =
                     particles[a].x -
@@ -296,13 +335,17 @@ document.addEventListener("DOMContentLoaded", function () {
                     ctx.beginPath();
 
                     ctx.moveTo(
+
                         particles[a].x,
                         particles[a].y
+
                     );
 
                     ctx.lineTo(
+
                         particles[b].x,
                         particles[b].y
+
                     );
 
                     ctx.stroke();
@@ -316,6 +359,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
+
     /* =====================================================
        ANIMACION
        ===================================================== */
@@ -323,11 +367,14 @@ document.addEventListener("DOMContentLoaded", function () {
     function animateParticles() {
 
         ctx.clearRect(
+
             0,
             0,
             canvas.width,
             canvas.height
+
         );
+
 
         particles.forEach(function (particle) {
 
@@ -337,7 +384,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         });
 
+
         connectParticles();
+
 
         requestAnimationFrame(
             animateParticles
@@ -347,4 +396,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
     animateParticles();
 
-});
+}
