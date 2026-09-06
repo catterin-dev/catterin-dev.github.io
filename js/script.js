@@ -1,3 +1,6 @@
+/* =====================================================
+   TEXTO DINÁMICO
+===================================================== */
 
 const textos = [
     "Python 🐍",
@@ -6,7 +9,7 @@ const textos = [
     "Estadística 📈"
 ];
 
-const elemento = document.getElementById("texto-dinamico");
+const elementoTexto = document.getElementById("texto-dinamico");
 
 let indiceTexto = 0;
 let indiceCaracter = 0;
@@ -18,52 +21,60 @@ function escribirTexto() {
 
     if (!borrando) {
 
-        elemento.textContent =
+        elementoTexto.textContent =
             textoActual.substring(0, indiceCaracter + 1);
 
         indiceCaracter++;
 
         if (indiceCaracter === textoActual.length) {
+
             borrando = true;
+
             setTimeout(escribirTexto, 1800);
+
             return;
         }
 
     } else {
 
-        elemento.textContent =
+        elementoTexto.textContent =
             textoActual.substring(0, indiceCaracter - 1);
 
         indiceCaracter--;
 
         if (indiceCaracter === 0) {
-            borrando = false;
-            indiceTexto = (indiceTexto + 1) % textos.length;
-        }
 
+            borrando = false;
+
+            indiceTexto =
+                (indiceTexto + 1) % textos.length;
+        }
     }
 
-    setTimeout(escribirTexto, borrando ? 50 : 100);
-
+    setTimeout(
+        escribirTexto,
+        borrando ? 50 : 100
+    );
 }
 
 escribirTexto();
 
 /* =====================================================
-   PARTICULAS MORADAS ANIMADAS
-   ===================================================== */
+   PARTÍCULAS MORADAS ANIMADAS
+===================================================== */
 
 const canvas = document.getElementById("particle-canvas");
 const ctx = canvas.getContext("2d");
 
 let particles = [];
 
-let mouse = {
+const mouse = {
     x: null,
     y: null
 };
 
 function resizeCanvas() {
+
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 }
@@ -72,8 +83,7 @@ resizeCanvas();
 
 window.addEventListener("resize", resizeCanvas);
 
-
-/* ---------- CURSOR ---------- */
+/* REACCIÓN AL CURSOR */
 
 window.addEventListener("mousemove", function (event) {
 
@@ -89,8 +99,7 @@ window.addEventListener("mouseleave", function () {
 
 });
 
-
-/* ---------- PARTICULA ---------- */
+/* CLASE PARTICULA */
 
 class Particle {
 
@@ -103,17 +112,14 @@ class Particle {
 
         this.speedX = Math.random() * 0.5 - 0.25;
         this.speedY = Math.random() * 0.5 - 0.25;
-
     }
-
 
     update() {
 
         this.x += this.speedX;
         this.y += this.speedY;
 
-
-        /* REACCION AL CURSOR */
+        /* REACCIÓN AL CURSOR */
 
         if (mouse.x !== null && mouse.y !== null) {
 
@@ -131,13 +137,13 @@ class Particle {
                 const fuerza =
                     (radius - distance) / radius;
 
-                this.x += (dx / distance) * fuerza * 2;
-                this.y += (dy / distance) * fuerza * 2;
+                this.x +=
+                    (dx / distance) * fuerza * 2;
 
+                this.y +=
+                    (dy / distance) * fuerza * 2;
             }
-
         }
-
 
         /* APARECER POR EL OTRO LADO */
 
@@ -156,9 +162,7 @@ class Particle {
         if (this.y > canvas.height) {
             this.y = 0;
         }
-
     }
-
 
     draw() {
 
@@ -172,19 +176,19 @@ class Particle {
             Math.PI * 2
         );
 
-        ctx.fillStyle = "rgba(118, 87, 217, 0.55)";
+        ctx.fillStyle =
+            "rgba(118, 87, 217, 0.55)";
 
         ctx.shadowBlur = 8;
-        ctx.shadowColor = "rgba(118, 87, 217, 0.5)";
+
+        ctx.shadowColor =
+            "rgba(118, 87, 217, 0.5)";
 
         ctx.fill();
-
     }
-
 }
 
-
-/* ---------- CREAR PARTICULAS ---------- */
+/* CREAR PARTÍCULAS */
 
 function createParticles() {
 
@@ -199,19 +203,13 @@ function createParticles() {
     }
 
     for (let i = 0; i < cantidad; i++) {
-
-        particles.push(
-            new Particle()
-        );
-
+        particles.push(new Particle());
     }
-
 }
 
 createParticles();
 
-
-/* ---------- CONECTAR PARTICULAS ---------- */
+/* CONECTAR PARTÍCULAS */
 
 function connectParticles() {
 
@@ -224,15 +222,14 @@ function connectParticles() {
         ) {
 
             const dx =
-                particles[a].x -
-                particles[b].x;
+                particles[a].x - particles[b].x;
 
             const dy =
-                particles[a].y -
-                particles[b].y;
+                particles[a].y - particles[b].y;
 
-            const distance =
-                Math.sqrt(dx * dx + dy * dy);
+            const distance = Math.sqrt(
+                dx * dx + dy * dy
+            );
 
             if (distance < 100) {
 
@@ -257,17 +254,12 @@ function connectParticles() {
                 );
 
                 ctx.stroke();
-
             }
-
         }
-
     }
-
 }
 
-
-/* ---------- ANIMACION ---------- */
+/* ANIMACIÓN DE PARTÍCULAS */
 
 function animateParticles() {
 
@@ -278,24 +270,16 @@ function animateParticles() {
         canvas.height
     );
 
+    particles.forEach(function (particle) {
 
-    particles.forEach(
-        particle => {
+        particle.update();
+        particle.draw();
 
-            particle.update();
-            particle.draw();
-
-        }
-    );
-
+    });
 
     connectParticles();
 
-
-    requestAnimationFrame(
-        animateParticles
-    );
-
+    requestAnimationFrame(animateParticles);
 }
 
 animateParticles();
@@ -309,39 +293,51 @@ let ultimaPosicionY = 0;
 let temporizadorCursor;
 
 function crearDestello(x, y) {
+
     const destello = document.createElement("span");
 
     destello.className = "cursor-spark";
+
     destello.style.left = `${x}px`;
     destello.style.top = `${y}px`;
 
     document.body.appendChild(destello);
 
-    setTimeout(() => {
+    setTimeout(function () {
         destello.remove();
     }, 700);
 }
 
 function crearBrillo(x, y) {
+
     const brillo = document.createElement("span");
 
     brillo.className = "cursor-glow";
+
     brillo.style.left = `${x}px`;
     brillo.style.top = `${y}px`;
 
     document.body.appendChild(brillo);
 
-    setTimeout(() => {
+    setTimeout(function () {
         brillo.remove();
     }, 1000);
 }
 
 window.addEventListener("mousemove", function (event) {
-    const diferenciaX = Math.abs(event.clientX - ultimaPosicionX);
-    const diferenciaY = Math.abs(event.clientY - ultimaPosicionY);
+
+    const diferenciaX =
+        Math.abs(event.clientX - ultimaPosicionX);
+
+    const diferenciaY =
+        Math.abs(event.clientY - ultimaPosicionY);
 
     if (diferenciaX > 12 || diferenciaY > 12) {
-        crearDestello(event.clientX, event.clientY);
+
+        crearDestello(
+            event.clientX,
+            event.clientY
+        );
 
         ultimaPosicionX = event.clientX;
         ultimaPosicionY = event.clientY;
@@ -349,13 +345,29 @@ window.addEventListener("mousemove", function (event) {
 
     clearTimeout(temporizadorCursor);
 
-    temporizadorCursor = setTimeout(() => {
-        crearBrillo(event.clientX, event.clientY);
+    temporizadorCursor = setTimeout(function () {
+
+        crearBrillo(
+            event.clientX,
+            event.clientY
+        );
+
     }, 350);
+
 });
+
+/* DESTELLO AL HACER CLIC */
 
 window.addEventListener("click", function (event) {
-    crearDestello(event.clientX, event.clientY);
-    crearDestello(event.clientX, event.clientY);
-});
 
+    crearDestello(
+        event.clientX,
+        event.clientY
+    );
+
+    crearDestello(
+        event.clientX,
+        event.clientY
+    );
+
+});
