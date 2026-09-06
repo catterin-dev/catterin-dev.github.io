@@ -6,7 +6,7 @@
 
 Portafolio profesional enfocado en la combinación de **estadística, tecnología y análisis de datos**, con interés en el desarrollo de soluciones mediante programación, automatización y visualización de información.
 
-🌐 **Portafolio:** [catterin-dev.github.io](https://catterin-dev.github.io)
+🌐 **Portafolio:** [catterin-dev.github.io](https://catterin-dev.github.io/)
 
 ---
 
@@ -16,13 +16,13 @@ Soy Bachiller en Ingeniería Estadística e Informática, interesada en el anál
 
 Mi formación integra conocimientos de estadística, informática y tecnologías de información, con especial interés en:
 
-* Análisis y procesamiento de datos.
-* Programación en Python.
-* Automatización de procesos.
-* Visualización de información.
-* Elaboración de reportes estadísticos.
-* Investigación aplicada.
-* Desarrollo de soluciones tecnológicas.
+- Análisis y procesamiento de datos.
+- Programación en Python.
+- Automatización de procesos.
+- Visualización de información.
+- Elaboración de reportes estadísticos.
+- Investigación aplicada.
+- Desarrollo de soluciones tecnológicas.
 
 Actualmente continúo fortaleciendo mis conocimientos en programación, ciencia de datos, automatización y tecnologías de información.
 
@@ -30,7 +30,7 @@ Actualmente continúo fortaleciendo mis conocimientos en programación, ciencia 
 
 ## 🎓 Formación académica
 
-**Universidad Nacional del Altiplano — Puno**
+### Universidad Nacional del Altiplano — Puno
 
 **Ingeniería Estadística e Informática**
 
@@ -38,12 +38,12 @@ Bachiller en Ingeniería Estadística e Informática.
 
 Áreas de formación:
 
-* Estadística.
-* Programación.
-* Análisis de datos.
-* Sistemas de información.
-* Tecnologías de información.
-* Investigación aplicada.
+- Estadística.
+- Programación.
+- Análisis de datos.
+- Sistemas de información.
+- Tecnologías de información.
+- Investigación aplicada.
 
 ---
 
@@ -59,31 +59,31 @@ Experiencia relacionada con el procesamiento, organización y difusión de infor
 
 ### Actividades desarrolladas
 
-* Procesamiento y organización de información estadística.
-* Verificación y consistencia de registros municipales.
-* Elaboración de reportes y materiales de difusión.
-* Apoyo en la actualización de información estadística.
-* Uso de herramientas informáticas para el procesamiento de datos.
-* Automatización y mejora de tareas repetitivas.
-* Elaboración de gráficos y materiales estadísticos.
+- Procesamiento y organización de información estadística.
+- Verificación y consistencia de registros municipales.
+- Elaboración de reportes y materiales de difusión.
+- Apoyo en la actualización de información estadística.
+- Uso de herramientas informáticas para el procesamiento de datos.
+- Automatización y mejora de tareas repetitivas.
+- Elaboración de gráficos y materiales estadísticos.
 
 ---
 
 ## 🛠️ Tecnologías y herramientas
 
-| Tecnología    | Aplicación                         |
-| ------------- | ---------------------------------- |
-| 🐍 Python     | Programación y automatización      |
-| 📊 Pandas     | Procesamiento y análisis de datos  |
-| 📈 R          | Análisis estadístico               |
-| 📊 Power BI   | Visualización de información       |
-| 📉 Matplotlib | Elaboración de gráficos            |
-| 📑 OpenPyXL   | Automatización de archivos Excel   |
-| 🔧 Git        | Control de versiones               |
-| 💻 GitHub     | Gestión y publicación de proyectos |
-| 🌐 HTML       | Estructura de páginas web          |
-| 🎨 CSS        | Diseño y estilos                   |
-| ⚙️ JavaScript | Interactividad y dinamismo         |
+| Tecnología | Aplicación |
+|---|---|
+| 🐍 Python | Programación y automatización |
+| 📊 Pandas | Procesamiento y análisis de datos |
+| 📈 R | Análisis estadístico |
+| 📊 Power BI | Visualización de información |
+| 📉 Matplotlib | Elaboración de gráficos |
+| 📑 OpenPyXL | Automatización de archivos Excel |
+| 🔧 Git | Control de versiones |
+| 💻 GitHub | Gestión y publicación de proyectos |
+| 🌐 HTML | Estructura de páginas web |
+| 🎨 CSS | Diseño y estilos |
+| ⚙️ JavaScript | Interactividad y dinamismo |
 
 ---
 
@@ -101,7 +101,7 @@ Desarrollo de análisis estadísticos y visualizaciones para facilitar la interp
 
 **Tecnologías:** Python · Pandas · Matplotlib · R · Power BI
 
-### 📌 Portafolio profesional
+### 🌐 Portafolio profesional
 
 Sitio web personal desarrollado para presentar mi formación académica, experiencia, proyectos, tecnologías e intereses de investigación.
 
@@ -123,15 +123,35 @@ El proyecto busca evaluar experimentalmente el efecto de una estrategia de autom
 
 ## 🎯 Áreas de interés
 
-* Análisis de datos.
-* Estadística aplicada.
-* Ciencia de datos.
-* Automatización de procesos.
-* Programación en Python.
-* Visualización de datos.
-* Sistemas de información.
-* Investigación estadística.
-* Desarrollo de soluciones tecnológicas.
+- Análisis de datos.
+- Estadística aplicada.
+- Ciencia de datos.
+- Automatización de procesos.
+- Programación en Python.
+- Visualización de datos.
+- Sistemas de información.
+- Investigación estadística.
+- Desarrollo de soluciones tecnológicas.
+
+---
+
+## ✨ Características del portafolio
+
+- Diseño profesional con tonos morados.
+- Interfaz adaptable a dispositivos móviles.
+- Navegación por secciones.
+- Animaciones y efectos visuales.
+- Texto dinámico.
+- Fondo animado con partículas.
+- Efectos de interacción con el cursor.
+- Destellos al mover el mouse.
+- Brillo cuando el cursor se detiene.
+- Fotografía personal circular.
+- Sección de formación académica.
+- Sección de experiencia profesional.
+- Presentación de proyectos.
+- Línea de investigación.
+- Información de contacto.
 
 ---
 
@@ -151,45 +171,3 @@ catterin-dev.github.io/
 │
 └── assets/
     └── foto.jpg
-```
-
----
-
-## ✨ Características del portafolio
-
-* Diseño profesional con tonos morados.
-* Interfaz adaptable a dispositivos móviles.
-* Navegación por secciones.
-* Animaciones y efectos visuales.
-* Texto dinámico.
-* Fondo animado con partículas.
-* Efectos de interacción con el cursor.
-* Sección de formación académica.
-* Sección de experiencia profesional.
-* Presentación de proyectos.
-* Línea de investigación.
-* Información de contacto.
-
----
-
-## 📬 Contacto
-
-📍 **Ubicación:** Puno, Perú
-
-💼 **LinkedIn:** [linkedin.com/in/catterine-quispe](https://www.linkedin.com/in/catterine-quispe)
-
-💻 **GitHub:** [github.com/catterin-dev](https://github.com/catterin-dev)
-
----
-
-## 🌐 Publicación
-
-Este portafolio se encuentra publicado mediante **GitHub Pages**.
-
-🔗 [Visitar portafolio](https://catterin-dev.github.io)
-
----
-
-## 📄 Licencia
-
-Este proyecto corresponde al portafolio personal de Catterine Carely Quispe Quispe.
