@@ -994,7 +994,7 @@ footer p:last-child {
         grid-template-columns: 1fr;
     }
 
-   /* =====================================================
+/* =====================================================
    FONDO DINÁMICO CON EL CURSOR
  ===================================================== */
 
@@ -1067,4 +1067,26 @@ footer {
         padding: 22px;
     }
 
+/* =====================================================
+   PARTICULAS DE FONDO
+   ===================================================== */
+
+#particle-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 0;
+
+    pointer-events: none;
+}
+
+header,
+main,
+footer {
+    position: relative;
+    z-index: 1;
 }
